@@ -7,4 +7,5 @@ Credits to
 @Nikhil ( for helping me make addon.d script)
 Here's a [preview](https://youtu.be/T2lpjj9OCqg).
 [news group](https://t.me/sealosinstaller) 
+And 
 [support group](https://t.me/sealosbootanimationinstaller)
