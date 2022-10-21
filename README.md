@@ -1,6 +1,6 @@
 # Seal-Os-Boot-Animation-Installer-
 A zip that installs Seal Os boot animation on the s7.
-Tested compatible with lineage Os & Pixel Experience.
+Compatible with lineage Os & Pixel Experience.
 Credits to
 @TOBY19k ( I Made this)
 @BlassGO ( creator of dynamic installer )
