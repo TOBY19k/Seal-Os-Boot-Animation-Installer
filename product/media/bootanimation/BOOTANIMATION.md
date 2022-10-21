@@ -1,4 +1,4 @@
-#How-to-make-this-boot-animation-
+# How to make the Seal Os boot animation 
 
 Get them downloaded and organized like they are now
 Then zip them without compressing them
