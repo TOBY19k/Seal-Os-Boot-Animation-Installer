@@ -11,11 +11,11 @@ Compatible android 12+/roms that have the boot animation in the system/product/m
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-[See this for full details](https://www.gnu.org/licenses/) .
+[See this for full details](https://www.gnu.org/licenses/).
 Credits to [@TOBY19k](https://forum.xda-developers.com/m/toby19k.12326709/) ( I Made this)
 [@BlassGO](https://forum.xda-developers.com/m/blassgo.11402469/) ( for making dynamic installer )
 [@Nikhil](https://forum.xda-developers.com/m/nikhil.4867515/) ( for helping me make addon.d script )
 Here's a [preview](https://youtu.be/T2lpjj9OCqg).
-[news group](https://t.me/sealosinstaller) 
-And 
-[support group](https://t.me/sealosbootanimationinstaller)
+Here's the [news group](https://t.me/sealosinstaller) 
+and the 
+[support group](https://t.me/sealosbootanimationinstaller).
