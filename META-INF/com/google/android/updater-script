@@ -1,0 +1,78 @@
+# Before: ui_print("  Hi! ");
+# Now:    ui_print " Hi! "
+#-----------Dynamic Installer Configs-----------#
+#The #MAGISK tag is required, dont remove it
+#MAGISK
+setdefault magisk_support on
+setdefault import_addons off
+setdefault apex_mount off
+setdefault extraction_speed default
+setdefault permissions "0:0:0755:0644"
+setdefault devices "herolte"
+#-----------------------------------------------#
+#Your script starts here:
+ui_print " Seal Os Boot Animation Installer "
+ui_print " Powered by Dynamic Installer "
+ui_print "  visit https://forum.xda-developers.com/t/zip-dual-installer-dynamic-installer-stable-4-6-android-10-or-earlier.4279541/ for more info "
+ui_print " -- Mounting partitions -- "
+mount_all
+#Start LOG
+startlog "sdcard/sealosbootanimationinstaller_log"
+printlog " checking if Seal Os Boot Animation is installed "
+if check_content "sealos.txt" "system/product/media/bootanimation.zip"; then
+   printlog " Seal Os Boot Animation Is already Installed "
+else
+   printlog " Seal Os Boot Animation isn't installed "
+   ui_print " moving current boot animation "
+ui_print "you can find it in the sdcard/BootAnimationBackup folder"
+#check if there are old backups 
+if exist file "sdcard/BootAnimationBackup/bootanimation.zip"; then
+   move /system/product/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation1.zip
+else
+move /system/product/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation.zip
+fi
+
+printlog "-- Installing Seal Os boot animation --"
+package_extract_file "system/product/media/SealOsBootAnimation.zip" /system/product/media/bootanimation.zip
+fi
+
+#addon.d survival script
+printlog " checking if rom has addon.d support "
+if exist folder "system/addon.d"; then
+   printlog "rom has addon.d support"
+printlog " checking if Seal Os Boot Animation addon.d survival script is installed "
+#Check if there already is a back up script
+if exist file "system/addon.d/19-SealOsBootAnimation.sh"; then
+   printlog " Updateing Survival Script "
+delete_recursive /system/addon.d/19-SealOsBootAnimation.sh
+package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
+set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
+else
+    printlog " addon.d survival script isn't installed"
+printlog " installing addon.d survival script "
+package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
+set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
+fi
+else
+   printlog " rom doesn't have addon.d support "
+fi
+
+printlog " -- Unmounting ALL -- "
+umount_all
+ui_print " "
+printlog " -- Done -- "
+ui_print " To uninstall this "
+ui_print " Flash the uninstaller available in the " 
+ui_print " Telegram Group and Channel "
+ui_print " https://t.me/sealosinstaller Channel link "
+ui_print " https://t.me/sealosbootanimationinstaller "  
+ui_print " Group link 
+ui_print " Or go to system/addon.d and delete"
+ui_print " 19-SealOsBootAnimation.sh "
+ui_print " than reflash the rom your useing "
+ui_print "if the rom your useing doesn't have addon.d"
+ui_print " then just reflash the rom your useing 
+ui_print "                       CREDITS TO: "
+ui_print " @TOBY19k ( I made this ) "
+ui_print " @BlassGO ( Creator of Dynamic Installer) "
+ui_print " @Nikhil (For helping me make addon.d survival script)"
