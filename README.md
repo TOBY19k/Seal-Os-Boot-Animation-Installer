@@ -11,7 +11,6 @@ Compatible with roms that have the boot animation in the system/product/media fo
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-See [this](https://www.gnu.org/licenses/gpl-3.0.html) for more License details.
 ### How To Install
 1. Download Seal Os Boot Animation Installer
 2. Go into custom recovery ( [TWRP](http://twrp.me/Devices/Samsung/),[Orange Fox](https://t.me/c/1057997886/583184),[SHRP](https://skyhawkrecovery.github.io/Devices.html)
