@@ -12,8 +12,6 @@ setdefault devices "herolte"
 #-----------------------------------------------#
 #Your script starts here:
 ui_print " Seal Os Boot Animation Installer "
-ui_print " Powered by Dynamic Installer "
-ui_print "  visit https://forum.xda-developers.com/t/zip-dual-installer-dynamic-installer-stable-4-6-android-10-or-earlier.4279541/ for more info "
 ui_print " -- Mounting partitions -- "
 mount_all
 #Start LOG
