@@ -16,6 +16,7 @@ Compatible with roms that have the boot animation in the system/product/media fo
 1. Download Seal Os Boot Animation Installer
 2. Go into custom recovery ( TWRP,Orange Fox,SHRP )
 3. Find the downloaded zip and flash it
+4. Reboot into system
 ### Credits To
 - [@TOBY19k](https://forum.xda-developers.com/m/toby19k.12326709/) ( I Made this)
 - [@BlassGO](https://forum.xda-developers.com/m/blassgo.11402469/) ( For making dynamic installer )
