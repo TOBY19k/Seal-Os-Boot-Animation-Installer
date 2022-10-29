@@ -14,7 +14,7 @@ Compatible with roms that have the boot animation in the system/product/media or
 ### How To Install
 1. Download Seal Os Boot Animation Installer
 2. Go into custom recovery ( [TWRP](http://twrp.me/Devices/Samsung/), [Orange Fox](https://t.me/c/1057997886/583184), [SHRP](https://skyhawkrecovery.github.io/Devices.html), Lineage Recovery, or **pixel**experience Recovery )
-   - Note the Orange Fox link will only work if you are in the S7 AOSP-like ROMs (Early-Test and Discussion) telegram group.
+   - Note the Orange Fox link will only work if you are in the [S7 AOSP-like ROMs (Early-Test and Discussion) telegram group](https://t.me/+Pw_EPmXMmzDZIME-).
 3. Find the downloaded zip and flash it
 4. Reboot into system
 ### Credits To
