@@ -14,13 +14,15 @@ setdefault devices "herolte"
 ui_print " Seal Os Boot Animation Installer "
 ui_print " -- Mounting partitions -- "
 mount_all
-#Start LOG
-startlog "sdcard/sealosbootanimationinstaller_log"
-printlog " checking if Seal Os Boot Animation is installed "
+#figure out where the boot animation is located
+ui_print " finding boot animation location " 
+if exist file "system/media/product/bootanimation.zip"; then
+   ui_print " boot animation is located in system/product/media "
+   ui_print " checking if Seal Os Boot Animation is installed "
 if check_content "sealos.txt" "system/product/media/bootanimation.zip"; then
-   printlog " Seal Os Boot Animation Is already Installed "
+   ui_print " Seal Os Boot Animation Is already Installed "
 else
-   printlog " Seal Os Boot Animation isn't installed "
+   ui_print " Seal Os Boot Animation isn't installed "
    ui_print " moving current boot animation "
 ui_print "you can find it in the sdcard/BootAnimationBackup folder"
 #check if there are old backups 
@@ -30,12 +32,12 @@ else
 move /system/product/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation.zip
 fi
 
-printlog "-- Installing Seal Os boot animation --"
+ui_print "-- Installing Seal Os boot animation --"
 package_extract_file "system/product/media/SealOsBootAnimation.zip" /system/product/media/bootanimation.zip
 fi
 
 #addon.d survival script
-printlog " checking if rom has addon.d support "
+ui_print " checking if rom has addon.d support "
 if exist folder "system/addon.d"; then
    printlog "rom has addon.d support"
 printlog " checking if Seal Os Boot Animation addon.d survival script is installed "
@@ -46,30 +48,66 @@ delete_recursive /system/addon.d/19-SealOsBootAnimation.sh
 package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
 set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
 else
-    printlog " addon.d survival script isn't installed"
-printlog " installing addon.d survival script "
+    ui_print " addon.d survival script isn't installed"
+ui_print " installing addon.d survival script "
 package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
 set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
 fi
 else
-   printlog " rom doesn't have addon.d support "
+   ui_print " rom doesn't have addon.d support "
 fi
 
-printlog " -- Unmounting ALL -- "
+else
+   ui_print " boot animation is located in system/media "
+   ui_print " checking if Seal Os Boot Animation is installed "
+if check_content "sealos.txt" "system/media/bootanimation.zip"; then
+   ui_print " Seal Os Boot Animation Is already Installed "
+else
+   ui_print " Seal Os Boot Animation isn't installed "
+   ui_print " moving current boot animation "
+ui_print "you can find it in the sdcard/BootAnimationBackup folder"
+#check if there are old backups 
+if exist file "sdcard/BootAnimationBackup/bootanimation.zip"; then
+   move /system/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation1.zip
+else
+move /system/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation.zip
+fi
+
+ui_print "-- Installing Seal Os boot animation --"
+package_extract_file "system/product/media/SealOsBootAnimation.zip" /system/media/bootanimation.zip
+fi
+
+#addon.d survival script
+ui_print " checking if rom has addon.d support "
+if exist folder "system/addon.d"; then
+   ui_print "rom has addon.d support"
+ui_print " checking if Seal Os Boot Animation addon.d survival script is installed "
+#Check if there already is a back up script
+if exist file "system/addon.d/11-SealOsBootAnimation.sh"; then
+   ui_print " Updateing Survival Script "
+delete_recursive /system/addon.d/11-SealOsBootAnimation.sh
+package_extract_file "system/addon.d/11-SealOsBootAnimation.sh" /system/addon.d/11-SealOsBootAnimation.sh
+set_perm 0 0 0755 /system/addon.d/11-SealOsBootAnimation.sh
+else
+    ui_print " addon.d survival script isn't installed"
+ui_print " installing addon.d survival script "
+package_extract_file "system/addon.d/11-SealOsBootAnimation.sh" /system/addon.d/11-SealOsBootAnimation.sh
+set_perm 0 0 0755 /system/addon.d/11-SealOsBootAnimation.sh
+fi
+else
+   ui_print " rom doesn't have addon.d support "
+fi
+
+fi
+
+ui_print " -- Unmounting ALL -- "
 umount_all
 ui_print " "
-printlog " -- Done -- "
+ui_print " -- Done -- "
 ui_print " To uninstall this "
 ui_print " Flash the uninstaller available in the " 
 ui_print " Telegram Group and Channel "
-ui_print " https://t.me/sealosinstaller Channel link "
-ui_print " https://t.me/sealosbootanimationinstaller "  
-ui_print " Group link 
-ui_print " Or go to system/addon.d and delete"
-ui_print " 19-SealOsBootAnimation.sh "
-ui_print " than reflash the rom your useing "
-ui_print "if the rom your useing doesn't have addon.d"
-ui_print " then just reflash the rom your useing 
+ui_print " https://t.me/sealosinstaller Channel "
 ui_print "                       CREDITS TO: "
 ui_print " @TOBY19k ( I made this ) "
 ui_print " @BlassGO ( Creator of Dynamic Installer) "
