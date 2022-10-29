@@ -13,15 +13,15 @@ Compatible with roms that have the boot animation in the system/product/media or
     GNU General Public License for more details.
 ### How To Install
 1. Download Seal Os Boot Animation Installer
-2. Go into custom recovery ( [TWRP](http://twrp.me/Devices/Samsung/),[Orange Fox](https://t.me/c/1057997886/583184),[SHRP](https://skyhawkrecovery.github.io/Devices.html)
-   - Note the Orange Fox link will only work if you are in the S7 AOSP-like ROMs (Early-Test and Discussion) telegram group 
+2. Go into custom recovery ( [TWRP](http://twrp.me/Devices/Samsung/),[Orange Fox](https://t.me/c/1057997886/583184),[SHRP](https://skyhawkrecovery.github.io/Devices.html),Lineage Recovery,**pixel**experience Recovery )
+   - Note the Orange Fox link will only work if you are in the S7 AOSP-like ROMs (Early-Test and Discussion) telegram group.
 3. Find the downloaded zip and flash it
 4. Reboot into system
 ### Credits To
 - [@TOBY19k](https://forum.xda-developers.com/m/toby19k.12326709/) ( I Made this)
 - [@BlassGO](https://forum.xda-developers.com/m/blassgo.11402469/) ( For making dynamic installer )
 - [@Nikhil](https://forum.xda-developers.com/m/nikhil.4867515/) ( For helping me make addon.d script )
-- @ivanmeler ( For making Seal Os.mp4 with out it this wouldn't exist )
+- [@ivanmeler](https://forum.xda-developers.com/m/ivan_meler.4610599/) ( For making Seal Os.mp4 with out it this wouldn't exist )
 
 Here's a [preview](https://youtu.be/T2lpjj9OCqg).
 Here's the [news group](https://t.me/sealosinstaller) 
