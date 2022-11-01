@@ -17,6 +17,8 @@ Compatible with roms that have the boot animation in the system/product/media or
    - Note the Orange Fox link will only work if you are in the [S7 AOSP-like ROMs (Early-Test and Discussion) telegram group](https://t.me/+Pw_EPmXMmzDZIME-).
 3. Find the downloaded zip and flash it
 4. Reboot into system
+### To Uninstall
+Go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
 ### Credits To
 - [@TOBY19k](https://forum.xda-developers.com/m/toby19k.12326709/) ( I Made this)
 - [@BlassGO](https://forum.xda-developers.com/m/blassgo.11402469/) ( For making dynamic installer )
