@@ -34,5 +34,5 @@ Here's a [preview](https://youtu.be/T2lpjj9OCqg).
 Here's the [news group](https://t.me/sealosinstaller) 
 and the 
 [support group](https://t.me/sealosbootanimationinstaller).
-### To do
+### Plans
 - [ ] Add support for Floyd ROM/One Ui
