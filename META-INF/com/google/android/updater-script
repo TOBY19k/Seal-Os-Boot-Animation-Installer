@@ -8,7 +8,7 @@ setdefault import_addons off
 setdefault apex_mount off
 setdefault extraction_speed default
 setdefault permissions "0:0:0755:0644"
-setdefault devices "herolte"
+setdefault devices "herolte :hero2lte"
 #-----------------------------------------------#
 #Your script starts here:
 ui_print " Seal Os Boot Animation Installer "
