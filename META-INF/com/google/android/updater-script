@@ -14,11 +14,13 @@ setdefault devices "herolte :hero2lte"
 ui_print " Seal Os Boot Animation Installer "
 ui_print " -- Mounting partitions -- "
 mount_all
-#Check samsung device
-    try=$(get_file_prop /system/build.prop ro.product.system.manufacturer)
-    if [[ "$try" == "samsung" ]]; then
-       ui_print " Samsung Device Detected"
-abort "Samsung doesn't use bootanimation.zip"
+#Check if Samsung or Samsung based rom
+ui_print "Checking if you are using Samsung or Samsung based rom"
+if exist "/system/media/bootsamsung.qmg"; then
+   abort "You are using Samsung or Samsung based rom"
+else
+   ui_print " You aren't using Samsung or Samsung based rom"
+fi
 #figure out where the boot animation is located
 ui_print " finding boot animation location " 
 if exist file "system/media/product/bootanimation.zip"; then
