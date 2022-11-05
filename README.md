@@ -35,4 +35,4 @@ Here's the [news group](https://t.me/sealosinstaller)
 and the 
 [support group](https://t.me/sealosbootanimationinstaller).
 ### Plans
-- [ ] Add support for Floyd ROM/One Ui
+- [ ] Add support for [FloydQ](https://forum.xda-developers.com/t/rom-10-0-oneui-2-5-g930x-g935x-n930x-n935x-floydq-v7-0.4085667/)/One Ui
