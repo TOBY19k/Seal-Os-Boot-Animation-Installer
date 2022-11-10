@@ -30,6 +30,7 @@ Go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
 - [@Nikhil](https://forum.xda-developers.com/m/nikhil.4867515/) ( For helping me make addon.d script )
 - [@ivanmeler](https://forum.xda-developers.com/m/ivan_meler.4610599/) ( For making Seal Os.mp4 with out it this wouldn't exist )
 
+### Other stuff 
 Here's a [preview](https://youtu.be/T2lpjj9OCqg).
 Here's the [news group](https://t.me/sealosinstaller) 
 and the 
