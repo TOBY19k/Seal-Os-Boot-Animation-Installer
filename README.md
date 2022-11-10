@@ -32,7 +32,7 @@ Go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
 
 ### Other stuff 
 Here's a [preview](https://youtu.be/T2lpjj9OCqg).
-Here's the [news group](https://t.me/sealosinstaller) 
+Here's the [News Channel](https://t.me/sealosinstaller) 
 and the 
 [support group](https://t.me/sealosbootanimationinstaller).
 ### Plans
