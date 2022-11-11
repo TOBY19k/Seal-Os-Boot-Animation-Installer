@@ -31,7 +31,7 @@ Go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
 - [@ivanmeler](https://forum.xda-developers.com/m/ivan_meler.4610599/) ( For making Seal Os.mp4 with out it this wouldn't exist )
 
 ### Other stuff 
-Here's a [preview](https://youtu.be/T2lpjj9OCqg).
+Here's a preview on [YouTube](https://youtu.be/T2lpjj9OCqg) and here's a preview on [Snapchat](https://t.snapchat.com/cPVb7ytw).
 Here's the [News Channel](https://t.me/sealosinstaller) 
 and the 
 [support group](https://t.me/sealosbootanimationinstaller).
