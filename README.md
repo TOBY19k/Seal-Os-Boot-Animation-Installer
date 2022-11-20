@@ -35,7 +35,7 @@ Go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
 ### Other stuff 
 Here's a preview on [YouTube](https://youtu.be/T2lpjj9OCqg), [Snapchat](https://t.snapchat.com/cPVb7ytw), and [Twitter](https://twitter.com/TOBY19k/status/1591177363160793110?t=LMCgZQttGzNYVd0nxLv-0Q&s=19).
 Here's the [News Channel](https://t.me/sealosinstaller) 
-and the 
-[support group](https://t.me/sealosbootanimationinstaller).
+and the [support group](https://t.me/sealosbootanimationinstaller).
+Check out the website I am working on [here](https://toby19k.github.io/Seal-Os-Boot-Animation-Website/).
 ### Plans
 - [ ] Add support for [FloydQ](https://forum.xda-developers.com/t/rom-10-0-oneui-2-5-g930x-g935x-n930x-n935x-floydq-v7-0.4085667/)/One Ui. You can see the progress [here](https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/blob/Samsung-or-Samsung-based-rom/system/media/SCAMSUNGboot.md).
