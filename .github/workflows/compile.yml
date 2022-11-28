@@ -22,7 +22,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: zip files
+     - name: zip files
       - uses: actions/checkout@v2
       - uses: vimtor/action-zip@v1
         with:
