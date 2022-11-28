@@ -25,6 +25,5 @@ jobs:
       
   job2:
     needs: job1
-    - name: shell scripts 
        run: chmod +x .github/*.sh
        run: .github/make_zip.sh 
