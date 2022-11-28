@@ -22,9 +22,7 @@ jobs:
     steps:
       - name: Clone
         run: git clone https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer
-      
       - name: Grant permission shell scripts 
        run: chmod +x .github/*.sh
-
       - name: Run the zip script 
        run: .github/make_zip.sh 
