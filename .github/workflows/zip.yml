@@ -9,7 +9,7 @@ jobs:
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
-        filename: 'product/media/release.zip'
+        filename: '/product/media/release.zip'
         directory: 'system'
-        path: 'product/media/BOOTANIAMATION'
+        path: '/product/media/BOOTANIAMATION'
         exclusions: '*.git* /*node_modules/* .editorconfig'
