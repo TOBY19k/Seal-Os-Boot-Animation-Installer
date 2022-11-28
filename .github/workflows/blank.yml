@@ -25,7 +25,6 @@ jobs:
       
   job2:
     needs: job1
-    - name: Grant permission shell scripts 
+    - name: shell scripts 
        run: chmod +x .github/*.sh
-    - name: Run the zip script 
        run: .github/make_zip.sh 
