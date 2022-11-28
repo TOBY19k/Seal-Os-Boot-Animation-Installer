@@ -27,8 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Clone
-           run: |
-              git clone https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer
+       run: |
+         git clone https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer
 
       - name: Grant permission shell scripts 
        run: chmod +x .github/*.sh
