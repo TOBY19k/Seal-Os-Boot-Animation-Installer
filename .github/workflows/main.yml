@@ -1,0 +1,14 @@
+name: Zip Files
+
+on:
+  push:
+
+jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: vimtor/action-zip@v1
+        with:
+          files: BOOTAINATION/
+          dest: SealOsBootAnimation.zip
