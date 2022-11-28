@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: zip -0 -r SealOsBootAnimation.zip . -i BOOTANIMATION
+        run: zip -0 -r SealOsBootAnimation.zip . -i system/product/media/BOOTANIMATION
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
