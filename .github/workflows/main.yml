@@ -1,0 +1,9 @@
+name: zipper
+on: commit
+permissions: read-all|write-all
+jobs:
+  my_first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    run: zip -r test.zip system
+    shell: bash
