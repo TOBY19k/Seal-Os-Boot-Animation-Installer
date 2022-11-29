@@ -11,6 +11,7 @@ jobs:
       - name: zip
         run: |
           zip -0 -r SealOsBootAnimation.zip . -i /home/runner/work/Seal-Os-Boot-Animation-Installer/Seal-Os-Boot-Animation-Installer/README.md
+        working-directory: ./home/runner/work/Seal-Os-Boot-Animation-Installer/Seal-Os-Boot-Animation-Installer/system/product/media
       - uses: actions/upload-artifact@v1
         with:
           name: SealOsBootAnimation 
