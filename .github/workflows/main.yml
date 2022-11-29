@@ -15,5 +15,5 @@ jobs:
           dest: SealOsBootAnimation.zip
       - uses: actions/upload-artifact@v1
         with:
-          name: SealOsBootAnimation
+          name: SealOsBootAnimation.zip
           path: ${{ github.workspace }}/SealOsBootAnimation.zip
