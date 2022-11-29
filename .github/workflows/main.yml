@@ -8,11 +8,9 @@ jobs:
     environment: 
       name: Test
     steps:
-      - uses: actions/checkout@v2
-      - uses: vimtor/action-zip@v1
-        with:
-          files: system/product/media/BOOTANIMATION/ 
-          dest: SealOsBootAnimation.zip
+      - name: zip
+        run: |
+         zip -0 -r SealOsBootAnimation.zip system/product/media/BOOTANIMATION
       - uses: actions/upload-artifact@v1
         with:
           name: SealOsBootAnimation.zip
