@@ -8,9 +8,12 @@ jobs:
     environment: 
       name: Test
     steps:
-      - name: zip
-        run: |
-          zip -0 -r SealOsBootAnimation.zip . --include **/BOOTANIMATION/**
+      - name: Grant permission shell scripts
+          run: chmod +x .github/*.sh
+     
+      - name: Run the zip script
+          run: .github/zip.sh
+      
       - uses: actions/upload-artifact@v1
         with:
           name: SealOsBootAnimation 
