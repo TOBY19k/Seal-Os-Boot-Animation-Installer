@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: zip
         run: |
-         find . -name "*.[txt]" -print | zip source -@BOOTANIMATION
+         find -type d -name BOOTANIMATION -print | zip -0 -r SealOsBootAnimation.zip
       - uses: actions/upload-artifact@v1
         with:
           name: SealOsBootAnimation 
-          path: ${{ github.workspace }}/"*.[zip]"
+          path: ${{ github.workspace }}/SealOsBootAnimation.zip
