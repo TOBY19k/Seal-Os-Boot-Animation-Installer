@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: zip
         run: |
-         zip -0 -r SealOsBootAnimation.zip . -i BOOTANIMATION
+         zip -0 -r SealOsBootAnimation.zip . -i desc.txt sealos.txt
       - uses: actions/upload-artifact@v1
         with:
           name: SealOsBootAnimation.zip
