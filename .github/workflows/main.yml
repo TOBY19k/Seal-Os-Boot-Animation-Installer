@@ -1,8 +1,6 @@
 name: Zip Files
 
-on:
-  release:
-    types: [published]
+on: push
 
 jobs:
   zip-files:
