@@ -2,7 +2,8 @@ name: zipper
 on: push
 permissions: read-all|write-all
 jobs:
-  my_first_job:
+  job1:
+    runs-on: ubuntu-latest
     steps:
     - name: Install zip
     uses: montudor/action-zip@v1
