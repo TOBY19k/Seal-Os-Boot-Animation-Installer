@@ -3,6 +3,7 @@ on: push
 permissions: read-all|write-all
 jobs:
   my_first_job:
+    steps:
     name: My first job
     runs-on: ubuntu-latest
     run: zip -r test.zip system
