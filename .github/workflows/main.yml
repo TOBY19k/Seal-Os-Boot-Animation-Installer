@@ -1,13 +1,17 @@
-name: zipper
-on: push
-permissions: read-all|write-all
-jobs:
-  job_one:
-   name: My first job
-    steps:
-    - name: Install zip
-    uses: montudor/action-zip@v1
+name: Zip Files
 
-    - name: Zip output
-    run: zip -qq -r Test.zip system/product/media node_modules package.json
-    working-directory: system/product/media/BOOTANIMATION
+on:
+  release:
+    types: [published]
+
+jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: vimtor/action-zip@v1
+        with:
+          files: system/product/media/BOOTANIMATION/ 
+          dest: result.zip
