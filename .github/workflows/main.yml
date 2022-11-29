@@ -4,7 +4,9 @@ permissions: read-all|write-all
 jobs:
   my_first_job:
     steps:
-    name: My first job
-    runs-on: ubuntu-latest
-    run: zip -r test.zip system
-    shell: bash
+    - name: Install zip
+    uses: montudor/action-zip@v1
+
+    - name: Zip output
+    run: zip -qq -r Test.zip system/product/media node_modules package.json
+    working-directory: system/product/media/BOOTANIMATION
