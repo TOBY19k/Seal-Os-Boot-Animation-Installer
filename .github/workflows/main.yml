@@ -2,7 +2,8 @@ name: zipper
 on: push
 permissions: read-all|write-all
 jobs:
-  job1:
+  job_one:
+   name: My first job
     runs-on: ubuntu-latest
     steps:
     - name: Install zip
