@@ -4,7 +4,6 @@ permissions: read-all|write-all
 jobs:
   job_one:
    name: My first job
-    runs-on: ubuntu-latest
     steps:
     - name: Install zip
     uses: montudor/action-zip@v1
