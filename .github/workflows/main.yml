@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: zip
         run: |
-         find -type d -name BOOTANIMATION -print
+        zip -0 -r SealOsBootAnimation.zip /system/product/media/BOOTANIAMATION
       - uses: actions/upload-artifact@v1
         with:
           name: SealOsBootAnimation 
