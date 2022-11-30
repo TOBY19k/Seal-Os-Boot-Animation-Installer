@@ -32,9 +32,9 @@ jobs:
           zip -0 -r bootanimation.zip part0 part1 part2 desc.txt sealos.txt
           mv bootanimation.zip ${{ github.workspace }}/system/product/media/SealOsBootAnimation.zip
           rm -r ${{ github.workspace }}/system/product/media/BOOTANIMATION
-       - uses: actions/upload-artifact@v3
-         with:
-           name: SealOsBootAnimationInstaller
-           path: |
-             ${{ github.workspace }}/system
-             ${{ github.workspace }}/META-INF
+      - uses: actions/upload-artifact@v3
+        with:
+          name: SealOsBootAnimationInstaller
+          path: |
+            ${{ github.workspace }}/system
+            ${{ github.workspace }}/META-INF
