@@ -9,7 +9,7 @@ jobs:
       name: Test
     steps:
       - name: Run the zip script
-         run: .github/zip.sh
+         run: bash .github/zip.sh
       - uses: actions/upload-artifact@v2
         with:
           name: SealOsBootAnimation 
