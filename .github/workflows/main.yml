@@ -10,7 +10,7 @@ jobs:
     steps:
      
       - name: Run the zip script
-          run: .github/zip.sh
+           run: .github/zip.sh
       
       - uses: actions/upload-artifact@v2
         with:
