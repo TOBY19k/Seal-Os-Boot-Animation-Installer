@@ -9,7 +9,7 @@ jobs:
       name: Test
     steps:
       - name: Grant permission shell scripts
-          run: chmod +x .github/*.sh
+             run: chmod +x .github/*.sh
      
       - name: Run the zip script
           run: .github/zip.sh
