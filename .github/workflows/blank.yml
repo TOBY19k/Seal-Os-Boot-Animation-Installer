@@ -35,5 +35,5 @@ jobs:
           ${{ github.workspace }}/zip.sh
       - uses: actions/upload-artifact@v3
         with:
-        name: SealOsBootAnimation 
-        path: ${{ github.workspace }}/SealOsBootAnimation.zip
+          name: SealOsBootAnimation 
+          path: ${{ github.workspace }}/SealOsBootAnimation.zip
