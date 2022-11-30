@@ -25,10 +25,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-         mkdir -p ba
-         cp -r ${{ github.workspace }}/system/product/media/BOOTANIMATION ba/
-         zip -0 -r ba/SealOsBootAnimation.zip
+         rm -rf tmp
+         mkdir -p tmp/ba
+         cp -r ${{ github.workspace }}/system/product/media/BOOTANIMATION tmp/ba
+         zip -0 -r SealOsBootAnimation.zip tmp/ba/
       - uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimation.zip
-          path: ba/SealOsBootAnimation.zip
+          path: tmp/ba/SealOsBootAnimation.zip
