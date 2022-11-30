@@ -9,7 +9,7 @@ jobs:
       name: Test
     steps:
      - uses: actions/checkout@v3
-         repository: 'TOBY19k/Seal-Os-Boot-Animation-Installer'
+            repository: 'TOBY19k/Seal-Os-Boot-Animation-Installer'
       - run: ${{ github.workspace }}/zip.sh
       - uses: actions/upload-artifact@v3
         with:
