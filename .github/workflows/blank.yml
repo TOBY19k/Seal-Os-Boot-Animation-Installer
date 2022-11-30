@@ -36,5 +36,5 @@ jobs:
         with:
           name: SealOsBootAnimationInstaller
           path: |
-            ${{ github.workspace }}/system
-            ${{ github.workspace }}/META-INF
+            /${{ github.workspace }}/system
+            /${{ github.workspace }}/META-INF
