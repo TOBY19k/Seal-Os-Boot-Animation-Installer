@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: Test
-    steps:
-     - uses: actions/checkout@v3
-      - run: ${{ github.workspace }}/zip.sh
-      - uses: actions/upload-artifact@v3
-        with:
-          name: SealOsBootAnimation 
-          path: ${{ github.workspace }}/SealOsBootAnimation.zip
+       steps:
+        - uses: actions/checkout@v3
+         - run: ${{ github.workspace }}/zip.sh
+          - uses: actions/upload-artifact@v3
+             with:
+              name: SealOsBootAnimation 
+              path: ${{ github.workspace }}/SealOsBootAnimation.zip
