@@ -8,7 +8,7 @@ jobs:
     environment: 
       name: Test
     steps:
-      - run: **.github/zip.sh**
+      - run: '**.github/zip.sh**'
       - uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimation 
