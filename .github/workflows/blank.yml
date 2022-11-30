@@ -35,4 +35,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimation 
-          path: ${{ github.workspace }}/BOOTANIMATION/
+          path: ${{ github.workspace }}/system/product/media/BOOTANIMATION/
