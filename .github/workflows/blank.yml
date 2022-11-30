@@ -32,7 +32,9 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
+          zip -0 -r SealOsBootAnimation.zip ${{ github.workspace }}/system/product/media/BOOTANIMATION/
+
       - uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimation 
-          path: ${{ github.workspace }}/system/product/media/BOOTANIMATION/
+          path: ${{ github.workspace }}/SealOsBootAnimation.zip
