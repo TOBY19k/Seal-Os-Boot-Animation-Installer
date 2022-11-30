@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Run the zip script
          run: bash .github/zip.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimation 
           path: ${{ github.workspace }}/SealOsBootAnimation.zip
