@@ -8,7 +8,6 @@ jobs:
     environment: 
       name: Test
     steps:
-     
       - name: Run the zip script
            run: sh .github/zip.sh
       
