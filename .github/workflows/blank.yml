@@ -31,6 +31,9 @@ jobs:
         run: |
           zip -0 -r bootanimation.zip part0 part1 part2 desc.txt sealos.txt
           mv bootanimation.zip ${{ github.workspace }}/system/product/media/SealOsBootAnimation.zip
+      - name: Delete file & folder that we don't want in the flash file
+        run: |
+          rm ${{ github.workspace }}/system/addon.d/addon.d.md
           rm -r ${{ github.workspace }}/system/product/media/BOOTANIMATION
       - uses: actions/upload-artifact@v3
         with:
