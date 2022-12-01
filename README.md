@@ -1,6 +1,6 @@
 <!-- This file is for GitHub for the best reading experience go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer -->
 # Seal Os Boot Animation Installer
-A zip flash file that installs Seal Os boot animation on the s7.
+A zip flash file that installs Seal Os Boot Animation (the resolution of the boot animation is 1440px 2560px it may not work as intended on devices with different screen resolutions).
 Fully based on [Dynamic Installer](https://forum.xda-developers.com/t/zip-dual-installer-dynamic-installer-stable-4-6-b-android-10-or-earlier.4279541/) .
 Compatible with roms that have the boot animation in the system/product/media or system/media folder.
 ### License
@@ -18,8 +18,7 @@ Compatible with roms that have the boot animation in the system/product/media or
 
 ### How To Install
 1. Download Seal Os Boot Animation Installer
-2. Go into custom recovery ( [TWRP](http://twrp.me/Devices/Samsung/), [Orange Fox](https://t.me/c/1057997886/583184), [SHRP](https://skyhawkrecovery.github.io/Devices.html), Lineage Recovery, or **pixel**experience Recovery )
-   - Note the Orange Fox link will only work if you are in the [S7 AOSP-like ROMs (Early-Test and Discussion) telegram group](https://t.me/+Pw_EPmXMmzDZIME-).
+2. Go into custom recovery ( [TWRP](http://twrp.me/), [Orange Fox](https://orangefox.download/), [SHRP](https://skyhawkrecovery.github.io/Devices.html), Lineage Recovery, or **pixel**experience Recovery )
 3. Find the downloaded zip and flash it
 4. Reboot into system
 
