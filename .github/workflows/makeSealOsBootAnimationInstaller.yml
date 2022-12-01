@@ -26,7 +26,8 @@ jobs:
         run: |
           rm ${{ github.workspace }}/system/addon.d/addon.d.md
           rm -r ${{ github.workspace }}/system/product/media/BOOTANIMATION
-      - uses: actions/upload-artifact@v3
+      - name: Upload Seal Os Boot Animation Installer
+        uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimationInstaller
           path: |
