@@ -1,4 +1,3 @@
-<!-- This file is for GitHub for the best reading experience go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer -->
 # Seal Os Boot Animation Installer
 A zip flash file that installs Seal Os Boot Animation (the resolution of the boot animation is 1440px 2560px it may not work as intended on devices with different screen resolutions).
 Fully based on [Dynamic Installer](https://forum.xda-developers.com/t/zip-dual-installer-dynamic-installer-stable-4-6-b-android-10-or-earlier.4279541/) .
