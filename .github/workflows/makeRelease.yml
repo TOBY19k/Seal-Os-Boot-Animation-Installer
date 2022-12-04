@@ -43,6 +43,5 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "V1.0.5"
           prerelease: false
           files: ${{ github.workspace }}/SealOsBootAnimationInstaller.zip
