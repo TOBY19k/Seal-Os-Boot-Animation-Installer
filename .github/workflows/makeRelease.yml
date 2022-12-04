@@ -50,3 +50,8 @@ jobs:
           prerelease: false
           draft: false
           asset_files: '${{ github.workspace }}/SealOsBootAnimationInstaller.zip'
+      - name: send default message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
