@@ -45,8 +45,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: 'V1.0.5'
-          release_name: ${{ github.ref }}
-          body: 'this is a test'
+          release_name: 'V1.0.5'
+          body_path: '.github/ReleaseNotes.md'
           prerelease: false
           draft: false
           asset_files: '${{ github.workspace }}/SealOsBootAnimationInstaller.zip'
