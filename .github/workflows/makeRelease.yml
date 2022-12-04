@@ -15,7 +15,7 @@ jobs:
      defaults:
       run:
         shell: bash
-        working-directory: ${{ github.workspace }}/system/product/media/BOOTANIMATION 
+        working-directory: ${{ github.workspace }}/
      # Steps represent a sequence of tasks that will be executed as part of the job
      steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -24,10 +24,11 @@ jobs:
       - name: Zip boot animation 
         run: |
           zip -0 -r ${{ github.workspace }}/system/product/media/SealOsBootAnimation.zip part0 part1 part2 desc.txt sealos.txt
+        working-directory: ${{ github.workspace }}/system/product/media/BOOTANIMATION 
       - name: Delete file & folder that we don't want in the flash file
         run: |
-          rm ${{ github.workspace }}/system/addon.d/addon.d.md
-          rm -r ${{ github.workspace }}/system/product/media/BOOTANIMATION
+          rm system/addon.d/addon.d.md
+          rm -r system/product/media/BOOTANIMATION
       - name: Upload Seal Os Boot Animation Installer
         uses: actions/upload-artifact@v3
         with:
@@ -38,11 +39,10 @@ jobs:
       - name: Zip Seal Os Boot Animation Installer 
         run: |
           zip -r SealOsBootAnimationInstaller.zip system META-INF
-        working-directory: ${{ github.workspace }}/
       - name: Publish release Zip 
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: "V1.0.5"
           prerelease: false
           files: ${{ github.workspace }}/SealOsBootAnimationInstaller.zip
