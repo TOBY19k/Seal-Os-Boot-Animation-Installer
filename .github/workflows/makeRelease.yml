@@ -40,9 +40,13 @@ jobs:
         run: |
           zip -r SealOsBootAnimationInstaller.zip system META-INF
       - name: Publish release Zip 
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: Hs1r1us/Release-AIO@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "V1.0.5"
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: 'this is a test'
           prerelease: false
-          files: ${{ github.workspace }}/SealOsBootAnimationInstaller.zip
+          draft: false
+          asset_files: 'output'
