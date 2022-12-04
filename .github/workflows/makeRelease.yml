@@ -53,7 +53,7 @@ jobs:
       - name: Inform Telegram
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.Tobys Project Channel_CHANNEL_ID }}
+          to: ${{ secrets.Tobys_Project_Channel_CHANNEL_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message_file: '.github/ReleaseNotes.md'
           format: markdown
