@@ -2,9 +2,6 @@ name: Make Release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on tag push
-  push:
-    tags: '*'
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -50,8 +47,10 @@ jobs:
           prerelease: false
           draft: false
           asset_files: '${{ github.workspace }}/SealOsBootAnimationInstaller.zip'
-      - name: send default message
+      - name: Inform telegram
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          message_file: .github/ReleaseNotes.md
+          document: ${{ github.workspace }}/SealOsBootAnimationInstaller.zip
