@@ -21,50 +21,14 @@ if exist "/system/media/bootsamsung.qmg"; then
 else
    ui_print " You aren't using Samsung or Samsung based rom"
 fi
-#figure out where the boot animation is located
-ui_print " finding boot animation location " 
-if exist file "system/media/product/bootanimation.zip"; then
-   ui_print " boot animation is located in system/product/media "
-   ui_print " checking if Seal Os Boot Animation is installed "
-if check_content "sealos.txt" "system/product/media/bootanimation.zip"; then
-   ui_print " Seal Os Boot Animation Is already Installed "
-else
-   ui_print " Seal Os Boot Animation isn't installed "
-   ui_print " moving current boot animation "
-ui_print "you can find it in the sdcard/BootAnimationBackup folder"
-#check if there are old backups 
-if exist file "sdcard/BootAnimationBackup/bootanimation.zip"; then
-   move /system/product/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation1.zip
-else
-move /system/product/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation.zip
-fi
-
-ui_print "-- Installing Seal Os boot animation --"
-package_extract_file "system/product/media/SealOsBootAnimation.zip" /system/product/media/bootanimation.zip
-fi
-
-else
+ui_print "-- Getting Ready To Install Seal Os Boot Animation --"
    ui_print " boot animation is located in system/media "
-   ui_print " checking if Seal Os Boot Animation is installed "
-if check_content "sealos.txt" "system/media/bootanimation.zip"; then
-   ui_print " Seal Os Boot Animation Is already Installed "
-else
-   ui_print " Seal Os Boot Animation isn't installed "
    ui_print " moving current boot animation "
 ui_print "you can find it in the sdcard/BootAnimationBackup folder"
-#check if there are old backups 
-if exist file "sdcard/BootAnimationBackup/bootanimation.zip"; then
-   move /system/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation1.zip
-else
 move /system/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation.zip
-fi
-
+move /system/product/media/bootanimation.zip /sdcard/BootAnimationBackup/bootanimation.zip
 ui_print "-- Installing Seal Os boot animation --"
 package_extract_file "system/product/media/SealOsBootAnimation.zip" /system/media/bootanimation.zip
-fi
-
-fi
-
 #addon.d survival script
 ui_print " checking if rom has addon.d support "
 if exist folder "system/addon.d"; then
