@@ -20,12 +20,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Zip boot animation 
         run: |
-          zip -0 -r ${{ github.workspace }}/system/product/media/SealOsBootAnimation.zip part0 part1 part2 desc.txt sealos.txt
-        working-directory: ${{ github.workspace }}/system/product/media/BOOTANIMATION 
+          zip -0 -r ${{ github.workspace }}/system/media/SealOsBootAnimation.zip part0 part1 part2 desc.txt sealos.txt
+        working-directory: ${{ github.workspace }}/system/media/BOOTANIMATION 
       - name: Delete file & folder that we don't want in the flash file
         run: |
           rm system/addon.d/addon.d.md
-          rm -r system/product/media/BOOTANIMATION
+          rm -r system/media/BOOTANIMATION
       - name: Upload Seal Os Boot Animation Installer
         uses: actions/upload-artifact@v3
         with:
