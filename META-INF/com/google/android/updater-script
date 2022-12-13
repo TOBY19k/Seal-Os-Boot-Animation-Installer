@@ -21,7 +21,7 @@ if exist "/system/media/bootsamsung.qmg"; then
 else
    ui_print " You aren't using Samsung or Samsung based rom"
 fi
-#figure out where the boot animation is located uses code from BlassGo's  Bootanimation_Maker[1.1]
+#figure out where the boot animation is located. This part uses code from BlassGo's  Bootanimation_Maker[1.1] script 
 native_anim=$(find /system -type f -name bootanimation.zip)
 if exist "$native_anim"; then
    ui_print "Found bootanimation.zip"
