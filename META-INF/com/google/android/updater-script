@@ -11,20 +11,28 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
-ui_print " Seal Os Boot Animation Installer "
-ui_print " -- Mounting partitions -- "
+ui_print "Seal Os Boot Animation Installer"
+ui_print "-- Mounting partitions --"
 mount_all
 #Check if Samsung or Samsung based rom
 ui_print "Checking if you are using Samsung or Samsung based rom"
 if exist "/system/media/bootsamsung.qmg"; then
    abort "You are using Samsung or Samsung based rom"
 else
-   ui_print " You aren't using Samsung or Samsung based rom"
+   ui_print "You aren't using Samsung or Samsung based rom"
 fi
 #figure out where the boot animation is located. This part uses code from BlassGo's  Bootanimation_Maker[1.1] script 
 native_anim=$(find /system -type f -name bootanimation.zip)
 if exist "$native_anim"; then
    ui_print "Found bootanimation.zip"
 else
-    abort " CANT FIND: bootanimation.zip"
+   abort " CANT FIND: bootanimation.zip"
 fi
+#check if seal os boot animation is installed 
+if check_content "sealos.txt" "$native_anim"; then
+   ui_print "Seal Os Boot Animation Is already Installed"
+else
+   ui_print "Seal Os Boot Animation isn't installed"
+   move $native_anim /sdcard/BootAnimationBackup/bootanimation.zip
+   ui_print "-- Installing Seal Os boot animation --"
+   package_extract_file "system/product/media/SealOsBootAnimation.zip" $native_anim
