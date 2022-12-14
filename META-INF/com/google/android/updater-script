@@ -3,7 +3,7 @@
 #-----------Dynamic Installer Configs-----------#
 #The #MAGISK tag is required, dont remove it
 #MAGISK
-setdefault magisk_support on
+setdefault magisk_support off
 setdefault import_addons off
 setdefault apex_mount off
 setdefault extraction_speed default
@@ -26,7 +26,7 @@ native_anim=$(find /system -type f -name bootanimation.zip)
 if exist "$native_anim"; then
    ui_print "Found bootanimation.zip"
 else
-   abort " CANT FIND: bootanimation.zip"
+   abort "CANT FIND: bootanimation.zip"
 fi
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
@@ -37,3 +37,27 @@ else
    ui_print "-- Installing Seal Os boot animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
 fi
+#addon.d script
+ui_print "Checking if rom has addon.d support"
+if exist folder "system/addon.d"; then
+   ui_print "rom has addon.d support"
+   ui_print "checking if Seal Os Boot Animation addon.d survival script is installed"
+   #Check if there already is a back up script
+   if exist file "system/addon.d/19-SealOsBootAnimation.sh"; then
+      ui_print "Updateing Survival Script"
+      delete_recursive /system/addon.d/19-SealOsBootAnimation.sh
+      package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
+      set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
+   else
+      ui_print "addon.d survival script isn't installed"
+      ui_print "installing addon.d survival script"
+      package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
+      set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
+   fi
+else
+   ui_print "rom doesn't have addon.d support"
+fi
+ui_print "-- Unmounting ALL --"
+umount_all
+ui_print " "
+ui_print "-- Done --"
