@@ -48,13 +48,14 @@ if exist folder "system/addon.d"; then
       ui_print "Updateing Survival Script"
       replace "bootanimation.zip" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
       remove "/system/" /system/addon.d/19-SealOsBootAnimation.sh
-      replace "#bootanimation.zip" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
+      replace "<bootanimation.zip>" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
    else
       ui_print "addon.d survival script isn't installed"
       ui_print "Installing Survival Script"
       package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
       replace "bootanimation.zip" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
       remove "/system/" /system/addon.d/19-SealOsBootAnimation.sh
+      replace "<bootanimation.zip>" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
       set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
    fi
 else
