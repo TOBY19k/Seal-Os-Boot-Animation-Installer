@@ -40,7 +40,7 @@ else
 fi
 #addon.d script
 ui_print "Checking if rom has addon.d support"
-if exist folder "system/addon.d"; then
+if exist folder "/system/addon.d"; then
    ui_print "Rom has addon.d support"
    ui_print "Checking if Seal Os Boot Animation addon.d survival script is installed"
    #Check if there already is a back up script
