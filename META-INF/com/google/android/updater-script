@@ -36,3 +36,4 @@ else
    move $native_anim /sdcard/BootAnimationBackup/bootanimation.zip
    ui_print "-- Installing Seal Os boot animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
+fi
