@@ -1,8 +1,7 @@
 ## Changelog
-- Improved bootanimation.zip finding method
+- Improved bootanimation.zip finding method (This uses code from BlassGo's  Bootanimation_Maker[1.1] script)
 - Updated Dynamic Installer base
 - Turned setdefault devices off
-- Turned setdefault magisk_support off
 - Made GitHub action that builds Seal Os Boot Animation Installer and a separate one that builds and release's it
 - Removed GitHub readme and license from the flash file
 - Removed system/product/media folder and replaced it with system/media folder 
