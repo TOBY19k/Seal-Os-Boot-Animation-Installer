@@ -1,5 +1,6 @@
 ## Changelog
-- Improved bootanimation.zip finding method (This uses code from [@BlassGo's](https://forum.xda-developers.com/m/blassgo.11402469/) [Bootanimation_Maker[1.1]](https://t.me/skyflyteam/505) script)
+- Now it can find the bootanimation.zip in the /system folder (This uses code from [@BlassGo's](https://forum.xda-developers.com/m/blassgo.11402469/) [Bootanimation_Maker[1.1]](https://t.me/skyflyteam/505) script)
+- Improved addon.d script
 - Updated Dynamic Installer base
 - Turned setdefault devices off
 - Made GitHub action that builds Seal Os Boot Animation Installer and a separate one that builds and release's it
