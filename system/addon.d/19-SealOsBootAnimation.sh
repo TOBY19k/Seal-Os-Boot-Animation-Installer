@@ -3,7 +3,7 @@
 # ADDOND_VERSION=2
 #
 # /system/addon.d/19-SealOsBootAnimation.sh
-# During a LineageOS upgrade, this script backs up /system/product/media/bootanimation.zip,
+# During a LineageOS upgrade, this script backs up bootanimation.zip,
 # /system is formatted and reinstalled, then the file is restored.
 #
 
@@ -23,7 +23,7 @@ echo -e "ui_print $1\nui_print" >> /proc/self/fd/$OUTFD
 
 list_files() {
 cat <<EOF
-product/media/bootanimation.zip
+bootanimation.zip
 EOF
 }
 
