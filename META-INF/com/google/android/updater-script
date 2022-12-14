@@ -74,6 +74,7 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
+
 ui_print " "
 ui_print " -- Mounting partitions..."
 mount_all
@@ -108,7 +109,7 @@ ui_print " -- Done -- "
 ui_print " "
 '
 
-make_zip -script "$script" -type recovery -pm -output "/sdcard/BootAnimationBackup/BootAnimationUninstaller.zip"
+make_zip -s "$script" -t recovery -pm -o "/sdcard/BootAnimationBackup/BootAnimationUninstaller.zip"
 ui_print "-- Unmounting ALL --"
 umount_all
 ui_print " "
