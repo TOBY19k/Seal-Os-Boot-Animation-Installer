@@ -57,7 +57,7 @@ if exist folder "system/addon.d"; then
       set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
    fi
 else
-   ui_print "rom doesn't have addon.d support"
+   ui_print "Rom doesn't have addon.d support"
 fi
 ui_print "-- Unmounting ALL --"
 umount_all
