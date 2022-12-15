@@ -12,6 +12,7 @@ setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
 ui_print " "
+ui_print "-- Boot Animation Uninstaller --"
 ui_print "-- Mounting partitions --"
 mount_all
 ui_print "Finding bootanimation.zip"
