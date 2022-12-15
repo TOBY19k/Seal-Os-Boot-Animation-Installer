@@ -1,7 +1,7 @@
 # Seal Os Boot Animation Installer
 A zip flash file that installs Seal Os Boot Animation.
 Fully based on [Dynamic Installer](https://forum.xda-developers.com/t/zip-dual-installer-dynamic-installer-stable-4-6-b-android-10-or-earlier.4279541/).
-Compatible with roms that have the boot animation in the system/product/media or system/media folder.
+Compatible with roms that have the boot animation in the /system folder.
 ### License
 <details>
 <summary>Information</summary>
