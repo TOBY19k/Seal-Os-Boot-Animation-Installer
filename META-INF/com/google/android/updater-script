@@ -65,6 +65,8 @@ fi
 ui_print "Making Uninstaller"
 script=$(read_file "$addons/uninstall-script.txt")
 make_zip -s "$script" -t recovery -pm -o "/sdcard/BootAnimationBackup/BootAnimationUninstaller.zip"
+ui_print "Finished Making Uninstaller"
+ui_print "You can find it in the /sdcard/BootAnimationBackup folder"
 ui_print "-- Unmounting ALL --"
 umount_all
 ui_print " "
