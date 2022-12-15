@@ -62,6 +62,7 @@ else
    ui_print "Rom doesn't have addon.d support"
 fi
 #make Uninstaller
+ui_print "Making Uninstaller"
 script=$(read_file "$addons/uninstall-script.txt")
 make_zip -s "$script" -t recovery -pm -o "/sdcard/BootAnimationBackup/BootAnimationUninstaller.zip"
 ui_print "-- Unmounting ALL --"
