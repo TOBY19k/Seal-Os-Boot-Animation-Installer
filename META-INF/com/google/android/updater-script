@@ -62,53 +62,7 @@ else
    ui_print "Rom doesn't have addon.d support"
 fi
 #make Uninstaller
-script='
-#-----------Dynamic Installer Configs-----------#
-#The #MAGISK tag is required, dont remove it
-#MAGISK
-setdefault magisk_support on
-setdefault import_addons off
-setdefault apex_mount off
-setdefault extraction_speed default
-setdefault permissions "0:0:0755:0644"
-setdefault devices off
-#-----------------------------------------------#
-#Your script starts here:
-
-ui_print " "
-ui_print " -- Mounting partitions..."
-mount_all
-ui_print "Finding bootanimation.zip"
-#figure out where the boot animation is located. This part uses code from BlassGo's  Bootanimation_Maker[1.1] script 
-native_anim=$(find /system -type f -name bootanimation.zip)
-if exist "$native_anim"; then
-   ui_print "Found bootanimation.zip"
-else
-   abort "CANT FIND: bootanimation.zip"
-fi
-move /sdcard/BootAnimationBackup/bootanimation.zip $native_anim
-ui_print "Deleting boot animation back up folder"
-delete_recursive /sdcard/BootAnimationBackup
-#addon.d script
-ui_print "Checking if rom has addon.d support"
-if exist folder "/system/addon.d"; then
-   ui_print "Rom has addon.d support"
-   ui_print " deleting addon.d survival script"
-   delete_recursive /system/addon.d/11-BootAnimation.sh
-   delete_recursive /system/addon.d/11-SealOsBootAnimation.sh
-   delete_recursive /system/addon.d/19-OnePlusBootAnimation.sh
-   delete_recursive /system/addon.d/19-BootAnimation.sh
-   delete_recursive /system/addon.d/19-SealOsBootAnimation.sh
-else
-   ui_print "Rom doesn't have addon.d support"
-fi
-ui_print " -- Unmounting ALL -- "
-umount_all
-ui_print " "
-ui_print " -- Done -- "
-ui_print " "
-'
-
+script=$(read_file "$addons/uninstall-script.txt")
 make_zip -s "$script" -t recovery -pm -o "/sdcard/BootAnimationBackup/BootAnimationUninstaller.zip"
 ui_print "-- Unmounting ALL --"
 umount_all
