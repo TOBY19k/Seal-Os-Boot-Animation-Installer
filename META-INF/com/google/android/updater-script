@@ -22,7 +22,7 @@ else
    ui_print "You aren't using Samsung or Samsung based rom"
 fi
 ui_print "Finding bootanimation.zip"
-#figure out where the boot animation is located. This part uses code from BlassGo's  Bootanimation_Maker[1.1] script 
+#use custom bootanimation function to find the boot animation 
 bootanimation find_in /system 
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
