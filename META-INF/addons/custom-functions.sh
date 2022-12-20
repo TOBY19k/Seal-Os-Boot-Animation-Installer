@@ -1,8 +1,9 @@
 #!/sbin/sh
 #Uses code from BlassGo's  Bootanimation_Maker[1.1] script
 bootanimation() {
-    #find_in system oem
-    for -fi "$@"; do
+    #-fi system oem
+    local -n find_in="$1"
+    for -fi "${find_in[@]}"; do
         local native_anim=$(find /${2} -type f -name bootanimation.zip)
         if exist "$native_anim"; then
            ui_print "Found bootanimation.zip"
