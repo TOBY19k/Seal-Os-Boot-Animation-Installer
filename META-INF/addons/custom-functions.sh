@@ -10,7 +10,7 @@ bootanimation() {
            else
               abort "CANT FIND: bootanimation.zip"
            fi
-        else [[ "$find_in" == "oem" ]];
+        elif [[ "$find_in" == "oem" ]]; then
              native_anim=$(find /oem -type f -name bootanimation.zip)
              if exist "$native_anim"; then
                 ui_print "Found bootanimation.zip"
