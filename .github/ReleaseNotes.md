@@ -1,6 +1,6 @@
 ## Changelog
-- Now it can find the bootanimation.zip in the /system folder (This uses code from [@BlassGo's](https://forum.xda-developers.com/m/blassgo.11402469/) [Bootanimation_Maker[1.1]](https://t.me/skyflyteam/505) script)
 - Improved addon.d script
+- Added custom bootanimation function  (This uses code from [@BlassGo's](https://forum.xda-developers.com/m/blassgo.11402469/) [Bootanimation_Maker[1.1]](https://t.me/skyflyteam/505) script)
 - Now it makes the Uninstaller after installing it you can find it in the /sdcard/BootAnimationBackup folder 
 - Updated Dynamic Installer base
 - Turned setdefault devices off
