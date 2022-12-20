@@ -2,22 +2,13 @@
 #Uses code from BlassGo's  Bootanimation_Maker[1.1] script
 bootanimation() {
     #find_in system oem
-    for find in "$@"; do
-        if [[ "$find_in" == "system" ]]; then
-           local native_anim=$(find /system -type f -name bootanimation.zip)
-           if exist "$native_anim"; then
-              ui_print "Found bootanimation.zip"
-              export native_anim=$(find /system -type f -name bootanimation.zip)
-           else
-              abort "CANT FIND: bootanimation.zip"
-           fi
-        elif [[ "$find_in" == "oem" ]]; then
-             local native_anim=$(find /oem -type f -name bootanimation.zip)
-             if exist "$native_anim"; then
-                ui_print "Found bootanimation.zip"
-             else
-                abort "CANT FIND: bootanimation.zip"
-             fi
+    for find_in "$@"; do
+        local native_anim=$(find /${2} -type f -name bootanimation.zip)
+        if exist "$native_anim"; then
+           ui_print "Found bootanimation.zip"
+           export native_anim=$(find /${2} -type f -name bootanimation.zip)
+        else
+           abort "CANT FIND: bootanimation.zip"
         fi
     done 
     #backup
