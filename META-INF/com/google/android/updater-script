@@ -13,16 +13,27 @@ setdefault devices off
 #Your script starts here:
 ui_print "Seal Os Boot Animation Installer"
 #make custom boot animation finding function
-bootanimation_finder() {
-    local root_folder="$1"
-    for value in "$1"
-    do
-        native_anim=$(find ${root_folder} -type f -name bootanimation.zip)
-        if exist "$native_anim"; then
-           ui_print "Found bootanimation.zip"
-        else
-           abort "CANT FIND: bootanimation.zip"
-        fi  
+bootanimation() {
+    #find_in system oem #backup
+    for find in "$@"; do
+        if [[ "$find_in" == "system" ]]; then
+           local native_anim=$(find /system -type f -name bootanimation.zip)
+           if exist "$native_anim"; then
+              ui_print "Found bootanimation.zip"
+           else
+              abort "CANT FIND: bootanimation.zip"
+           fi
+        else [[ "$find_in" == "oem" ]]; then
+             local native_anim=$(find /oem -type f -name bootanimation.zip)
+             if exist "$native_anim"; then
+                ui_print "Found bootanimation.zip"
+             else
+                abort "CANT FIND: bootanimation.zip"
+             fi
+        fi
+    done 
+    for backup in "$@"; do
+        move $native_anim /sdcard/BootAnimationBackup/bootanimation.zip
     done
 }
 ui_print "-- Mounting partitions --"
@@ -36,13 +47,13 @@ else
 fi
 ui_print "Finding bootanimation.zip"
 #figure out where the boot animation is located. This part uses code from BlassGo's  Bootanimation_Maker[1.1] script 
-bootanimation_finder /system 
+bootanimation find_in /system 
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
    ui_print "Seal Os Boot Animation Is already Installed"
 else
    ui_print "Seal Os Boot Animation isn't installed"
-   move $native_anim /sdcard/BootAnimationBackup/bootanimation.zip
+   bootanimation backup
    ui_print "-- Installing Seal Os boot animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
 fi
