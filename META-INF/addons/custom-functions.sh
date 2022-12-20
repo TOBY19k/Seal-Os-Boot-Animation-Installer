@@ -7,6 +7,7 @@ bootanimation() {
            local native_anim=$(find /system -type f -name bootanimation.zip)
            if exist "$native_anim"; then
               ui_print "Found bootanimation.zip"
+              export native_anim=$(find /system -type f -name bootanimation.zip)
            else
               abort "CANT FIND: bootanimation.zip"
            fi
