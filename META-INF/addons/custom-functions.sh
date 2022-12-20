@@ -1,4 +1,5 @@
 #!/sbin/sh
+#Uses code from BlassGo's  Bootanimation_Maker[1.1] script
 bootanimation() {
     #find_in system oem
     for find in "$@"; do
