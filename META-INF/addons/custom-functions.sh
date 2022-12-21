@@ -2,8 +2,8 @@
 #Uses code from BlassGo's  Bootanimation_Maker[1.1] script
 bootanimation() {
     #-fi system oem
-    local -n find_in="$1"
-    for -fi "${find_in[@]}"; do
+    local -fi return=1
+    for -fi "$@"; do
         local native_anim=$(find /${2} -type f -name bootanimation.zip)
         if exist "$native_anim"; then
            ui_print "Found bootanimation.zip"
@@ -16,4 +16,5 @@ bootanimation() {
     for backup in "$@"; do
         move $native_anim /sdcard/BootAnimationBackup/bootanimation.zip
     done
+    return $return
 }
