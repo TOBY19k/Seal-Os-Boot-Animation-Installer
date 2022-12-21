@@ -23,13 +23,12 @@ else
 fi
 ui_print "Finding bootanimation.zip"
 #use custom bootanimation function to find the boot animation 
-bootanimation -fi system 
+bootanimation /system 
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
    ui_print "Seal Os Boot Animation Is already Installed"
 else
    ui_print "Seal Os Boot Animation isn't installed"
-   bootanimation backup
    ui_print "-- Installing Seal Os boot animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
 fi
