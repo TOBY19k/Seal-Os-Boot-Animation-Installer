@@ -1,20 +1,21 @@
 #!/sbin/sh
 #Uses code from BlassGo's  Bootanimation_Maker[1.1] script
 bootanimation() {
-    #-fi system oem
-    local -fi return=1
-    for -fi "$@"; do
-        local native_anim=$(find /${2} -type f -name bootanimation.zip)
+    for path in "$@"; do
+        native_anim=$(find "$path" -type f -name bootanimation.zip)
         if exist "$native_anim"; then
-           ui_print "Found bootanimation.zip"
-           export native_anim=$(find /${2} -type f -name bootanimation.zip)
-        else
-           abort "CANT FIND: bootanimation.zip"
+           ui_print "Found bootanimation.zip in $path"
+
+           #backup
+           move "$native_anim" /sdcard/BootAnimationBackup/bootanimation.zip
+
+           #close the for loop as soon as the bootanimation is found to save time
+           break
         fi
-    done 
-    #backup
-    for backup in "$@"; do
-        move $native_anim /sdcard/BootAnimationBackup/bootanimation.zip
     done
-    return $return
+
+    #check if after the for loop finished got any result
+    if not exist "$native_anim"; then
+       abort "CANT FIND: bootanimation.zip"
+    fi
 }
