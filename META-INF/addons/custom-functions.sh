@@ -15,7 +15,7 @@ bootanimation() {
     done
 
     #check if after the for loop finished got any result
-    if not exist "$native_anim"; then
+    if ! exist "$native_anim"; then
        abort "CANT FIND: bootanimation.zip"
     fi
 }
