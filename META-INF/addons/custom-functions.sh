@@ -15,7 +15,7 @@ bootanimation() {
     done
 
     #check if after the for loop finished got any result
-    if undefined "$native_anim" ; then
+    if undefined native_anim ; then
        abort "CANT FIND: bootanimation.zip"
     fi
 }
