@@ -21,7 +21,7 @@ jobs:
       - name: Update Version info 
         run: |
           NEWVERCODE=$(grep 'V1.0.5' system/media/BOOTANIMATION/sealos.txt)
-          NEWVERCODE=$((NEWVERCODE+.0.1))
+          NEWVERCODE=$((NEWVERCODE+0.0.1))
           sed -i "s|V.0.5|$NEWVERCODE|" system/media/BOOTANIMATION/sealos.txt
       - name: Zip boot animation 
         run: |
