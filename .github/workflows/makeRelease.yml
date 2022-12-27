@@ -20,8 +20,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update Version info 
         run: |
-          NEWVERCODE=$(grep 'V1.0.5' system/media/BOOTANIMATION/sealos.txt)
-          NEWVERCODE=$((NEWVERCODE+0.0.1))
+          Current=$(grep 'V1.0.5' system/media/BOOTANIMATION/sealos.txt)
+          Add='0.0.1'
+          NEWVERCODE=$(($Current + $Add))
           sed -i "s|V.0.5|$NEWVERCODE|" system/media/BOOTANIMATION/sealos.txt
       - name: Zip boot animation 
         run: |
