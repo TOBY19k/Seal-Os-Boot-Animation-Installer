@@ -18,12 +18,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # Runs a set of commands using the runners shell
-      - name: Update Version info 
-        run: |
-          Current=$(grep 'V1.0.5' system/media/BOOTANIMATION/sealos.txt)
-          Add='0.0.1'
-          NEWVERCODE=$(($Current + $Add))
-          sed -i "s|V.0.5|$NEWVERCODE|" system/media/BOOTANIMATION/sealos.txt
       - name: Zip boot animation 
         run: |
           zip -0 -r ${{ github.workspace }}/system/media/SealOsBootAnimation.zip part0 part1 part2 desc.txt sealos.txt
