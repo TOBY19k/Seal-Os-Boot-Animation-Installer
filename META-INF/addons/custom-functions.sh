@@ -19,6 +19,6 @@ bootanimation_find() {
 
 bootanimation_backup() {
     for path in "$@"; do
-        move "$native_anim" /"$sdcard"/BootAnimationBackup/bootanimation.zip
+        move "$native_anim" /"$path"/BootAnimationBackup/bootanimation.zip
     done
 }
