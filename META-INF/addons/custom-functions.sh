@@ -20,5 +20,6 @@ bootanimation_find() {
 bootanimation_backup() {
     for path in "$@"; do
         move "$native_anim" /"$path"/BootAnimationBackup/bootanimation.zip
+        ui_print "Backed up boot animation to /$path/BootAnimationBackup/bootanimation.zip"
     done
 }
