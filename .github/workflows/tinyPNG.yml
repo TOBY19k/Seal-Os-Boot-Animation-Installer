@@ -1,0 +1,15 @@
+name: image
+on:
+  push:
+    paths:
+      - '${{ github.workspace }}/system/media/BOOTANIMATION/**'
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: namoscato/action-tinify@v1
+        with:
+          api_key: ${{ secrets.TINIFY_API_KEY }}
