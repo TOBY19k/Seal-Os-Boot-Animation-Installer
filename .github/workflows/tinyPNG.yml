@@ -3,7 +3,7 @@ on:
   workflow_dispatch
   push:
     paths:
-      - '${{ github.workspace }}/system/media/BOOTANIMATION/**'
+      - 'system/media/BOOTANIMATION/**'
 jobs:
   compress:
     runs-on: ubuntu-latest
