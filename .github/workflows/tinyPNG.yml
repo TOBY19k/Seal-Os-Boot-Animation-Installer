@@ -1,9 +1,7 @@
 name: image
 on:
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch
-  push:
-    paths:
-      - 'system/media/BOOTANIMATION/**'
 jobs:
   compress:
     runs-on: ubuntu-latest
