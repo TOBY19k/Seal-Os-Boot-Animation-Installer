@@ -21,7 +21,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Zip Boot Animation 
         run: |
-          zip -0 -r ${{ github.workspace }}/system/media/SealOsBootAnimation.zip part0 part1 part2 desc.txt sealos.txt
+          zip -0qry -i \*.txt \*.png @ ${{ github.workspace }}/system/media/SealOsBootAnimation.zip *.txt part*
         working-directory: ${{ github.workspace }}/system/media/BOOTANIMATION
       - name: Delete file & folder that we don't want in the flash file
         run: |
