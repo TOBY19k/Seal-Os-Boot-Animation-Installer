@@ -16,7 +16,7 @@ OUTFD=$(ps | grep -v 'grep' | grep -oE 'update(.*) 3 [0-9]+' | cut -d" " -f3)
 [ -z $OUTFD ] && OUTFD=$(ps | grep -v 'grep' | grep -oE 'status_fd=[0-9]+' | cut -d= -f2)
 [ -z $OUTFD ] && OUTFD=$(ps -Af | grep -v 'grep' | grep -oE 'status_fd=[0-9]+' | cut -d= -f2)
 test "$verbose" -a "$OUTFD" && FD=$OUTFD
-#activates ui_print this is used from @topjohnw's magisk addon.d script 
+#creates ui_print function this is used from @topjohnw's magisk addon.d script 
 ui_print() {
 echo -e "ui_print $1\nui_print" >> /proc/self/fd/$OUTFD
 }
