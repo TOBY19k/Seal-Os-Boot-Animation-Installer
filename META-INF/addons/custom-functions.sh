@@ -19,6 +19,9 @@ bootanimation_find() {
 
 bootanimation_backup() {
     for path in "$@"; do
+        if undefined native_anim ; then
+           bootanimation_find /system
+        fi
         move "$native_anim" /"$path"/BootAnimationBackup/bootanimation.zip
         ui_print "Backed up boot animation to /$path/BootAnimationBackup/bootanimation.zip"
     done
