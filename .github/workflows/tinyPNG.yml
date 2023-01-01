@@ -1,6 +1,7 @@
 name: image
 on:
   push:
+  pull_request:
 jobs:
   compress:
     runs-on: ubuntu-latest
