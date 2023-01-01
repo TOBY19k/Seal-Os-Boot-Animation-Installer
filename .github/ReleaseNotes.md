@@ -1,7 +1,7 @@
 ## Changelog
 - Improved addon.d script
 - Added custom bootanimation function  (This uses code from [@BlassGo's](https://forum.xda-developers.com/m/blassgo.11402469/) [Bootanimation_Maker[1.1]](https://t.me/skyflyteam/505) script)
-- Now it makes the Uninstaller after installing it you can find it in the /sdcard/BootAnimationBackup folder 
+- If you rename it to "Uninstall.zip" it will uninstall it
 - Updated Dynamic Installer base
 - Made Seal Os Boot Animation lighter
 - Turned setdefault devices off
