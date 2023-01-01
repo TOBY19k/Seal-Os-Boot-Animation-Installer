@@ -11,7 +11,7 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
-if [[ $installzip == *"Uninstall"* ]] ; then
+if [[ $installzip == *"Uninstall.zip"* ]] ; then
    ui_print "Boot Animation Uninstaller"
    ui_print "-- Mounting partitions --"
    mount_all
