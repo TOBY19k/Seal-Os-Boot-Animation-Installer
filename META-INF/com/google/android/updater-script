@@ -11,6 +11,30 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
+if [[ $installzip == *"Uninstall"* ]] ; then
+   ui_print "Finding bootanimation.zip"
+   #use custom bootanimation function to find the boot animation 
+   bootanimation_find /system
+   move /sdcard/BootAnimationBackup/bootanimation.zip $native_anim
+   ui_print "Deleting boot animation back up folder"
+   delete_recursive /sdcard/BootAnimationBackup
+   #addon.d script
+   ui_print "Checking if rom has addon.d support"
+   if exist folder "/system/addon.d"; then
+      ui_print "Rom has addon.d support"
+      ui_print "Deleting addon.d survival script"
+      delete /system/addon.d/11-BootAnimation.sh
+      delete /system/addon.d/11-SealOsBootAnimation.sh
+      delete /system/addon.d/19-OnePlusBootAnimation.sh
+      delete /system/addon.d/19-BootAnimation.sh
+      delete /system/addon.d/19-SealOsBootAnimation.sh
+   else
+      ui_print "Rom doesn't have addon.d support"
+   fi
+   ui_print "-- Unmounting ALL --"
+   umount_all
+   end "-- Done Uninstalling --"   
+fi
 ui_print "Seal Os Boot Animation Installer"
 ui_print "-- Mounting partitions --"
 mount_all
@@ -60,12 +84,6 @@ if exist folder "/system/addon.d"; then
 else
    ui_print "Rom doesn't have addon.d support"
 fi
-#make Uninstaller
-ui_print "Making Uninstaller"
-script=$(read_file "$addons/uninstall-script.txt")
-make_zip -s "$script" -t recovery -pa -pm -o "/sdcard/BootAnimationBackup/BootAnimationUninstaller.zip"
-ui_print "Finished Making Uninstaller"
-ui_print "You can find it in the /sdcard/BootAnimationBackup folder"
 ui_print "-- Unmounting ALL --"
 umount_all
 ui_print " "
