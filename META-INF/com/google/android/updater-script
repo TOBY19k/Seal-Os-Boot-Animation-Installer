@@ -12,6 +12,9 @@ setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
 if [[ $installzip == *"Uninstall"* ]] ; then
+   ui_print "Boot Animation Uninstaller"
+   ui_print "-- Mounting partitions --"
+   mount_all
    ui_print "Finding bootanimation.zip"
    #use custom bootanimation function to find the boot animation 
    bootanimation_find /system
