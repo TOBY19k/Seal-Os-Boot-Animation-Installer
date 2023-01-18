@@ -3,7 +3,7 @@
 - Added custom bootanimation function  (This uses code from [@BlassGo's](https://forum.xda-developers.com/m/blassgo.11402469/) [Bootanimation_Maker[1.1]](https://t.me/skyflyteam/505) script)
 - If you rename it to "Uninstall.zip" it will uninstall it
 - Updated Dynamic Installer base
-- Made Seal Os Boot Animation lighter
+- Made Seal Os Boot Animation 2 mb smaller
 - Turned setdefault devices off
 - Removed GitHub readme and license from the flash file
 - Removed system/product/media folder and replaced it with system/media folder 
