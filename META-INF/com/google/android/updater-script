@@ -13,7 +13,7 @@ setdefault devices off
 #Your script starts here:
 if [[ $installzip == *"Uninstall.zip"* ]] ; then
    package_extract_file "META-INF/com/google/android/uninstall-script" $TMP/uninstall-script
-   run_program "$TMP/uninstall-script"
+   . $TMP/uninstall-script
 fi
 ui_print "Seal Os Boot Animation Installer"
 ui_print "-- Mounting partitions --"
