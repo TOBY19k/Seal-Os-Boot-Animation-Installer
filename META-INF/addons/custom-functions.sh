@@ -26,3 +26,8 @@ bootanimation_backup() {
         ui_print "Backed up boot animation to /$path/BootAnimationBackup/bootanimation.zip"
     done
 }
+
+run_uninstall_script() {
+    package_extract_file "META-INF/com/google/android/uninstall-script" $TMP/uninstall-script
+    source $TMP/uninstall-script
+}
