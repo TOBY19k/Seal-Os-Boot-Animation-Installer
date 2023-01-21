@@ -28,6 +28,5 @@ bootanimation_backup() {
 }
 
 run_uninstall_script() {
-    package_extract_file "META-INF/com/google/android/uninstall-script" $TMP/uninstall-script
-    source $TMP/uninstall-script
+    package_extract_file "META-INF/com/google/android/uninstall-script" $TMP/uninstall-script && source $TMP/uninstall-script
 }
