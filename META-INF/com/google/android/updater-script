@@ -45,7 +45,7 @@ if [ -d /system/addon.d ]; then
    #Check if there already is a back up script
    if [ -f /system/addon.d/19-SealOsBootAnimation.sh ]; then
       ui_print "Updateing Survival Script"
-      delete /system/addon.d/*BootAnimation.sh
+      delete /system/addon.d/1[19]-*BootAnimation.sh
       package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
       replace "bootanimation.zip" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
       remove "/system/" /system/addon.d/19-SealOsBootAnimation.sh
