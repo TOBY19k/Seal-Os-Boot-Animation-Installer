@@ -22,5 +22,4 @@ else
    ui_print "Rom doesn't have addon.d support"
 fi
 ui_print "-- Unmounting ALL --"
-umount_all
 end "-- Done Uninstalling --"
