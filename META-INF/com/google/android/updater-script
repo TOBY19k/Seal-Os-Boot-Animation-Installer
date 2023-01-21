@@ -43,7 +43,7 @@ if [ -d /system/addon.d ]; then
    ui_print "Rom has addon.d support"
    ui_print "Checking if Seal Os Boot Animation addon.d survival script is installed"
    #Check if there already is a back up script
-   if exist file "system/addon.d/19-SealOsBootAnimation.sh"; then
+   if [ -f /system/addon.d/19-SealOsBootAnimation.sh ]; then
       ui_print "Updateing Survival Script"
       delete /system/addon.d/19-SealOsBootAnimation.sh
       package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
