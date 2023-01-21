@@ -5,6 +5,7 @@ mount_all
 ui_print "Finding bootanimation.zip"
 #use custom bootanimation function to find the boot animation 
 bootanimation_find /system
+ui_print "Restoring Previous Boot Animation"
 move /sdcard/BootAnimationBackup/bootanimation.zip $native_anim
 ui_print "Deleting boot animation back up folder"
 delete_recursive /sdcard/BootAnimationBackup
