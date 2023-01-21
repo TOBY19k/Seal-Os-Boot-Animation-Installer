@@ -3,7 +3,7 @@
 bootanimation_find() {
     for path in "$@"; do
         native_anim=$(find "$path" -type f -name bootanimation.zip)
-        if exist "$native_anim"; then
+        if [ -f $native_anim ]; then
            ui_print "Found bootanimation.zip in $path"
            #close the for loop as soon as the bootanimation is found to save time
            break
