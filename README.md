@@ -22,7 +22,8 @@ Compatible with roms that have the bootanimation.zip in the /system folder.
 4. Reboot into system
 
 ### To Uninstall
-Go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
+Rename SealOsBootAnimationInstaller.zip to uninstall.zip and flash it in recovery or
+go [here](https://github.com/TOBY19k/Boot-Animation-Uninstaller-).
 
 ### Credits To
 - [@TOBY19k](https://forum.xda-developers.com/m/toby19k.12326709/) ( I Made this)
