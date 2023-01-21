@@ -11,7 +11,7 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
-if [[ ${installzip,,} == *"uninstall.zip"* ]] ; then
+if [[ ${installzip,,} == *uninstall.zip ]] ; then
    run_uninstall_script
 fi
 ui_print "Seal Os Boot Animation Installer"
