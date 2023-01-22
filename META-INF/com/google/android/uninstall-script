@@ -8,13 +8,13 @@ bootanimation_find /system
 ui_print "Restoring Previous Boot Animation"
 move /sdcard/BootAnimationBackup/bootanimation.zip $native_anim
 ui_print "Deleting boot animation back up folder"
-delete_recursive /sdcard/BootAnimationBackup
+rm -rf /sdcard/BootAnimationBackup
 #addon.d script
 ui_print "Checking if rom has addon.d support"
 if [ -d /system/addon.d ]; then
    ui_print "Rom has addon.d support"
    ui_print "Deleting addon.d survival script"
-   delete /system/addon.d/1[19]-*BootAnimation.sh
+   rm -f /system/addon.d/1[19]-*BootAnimation.sh
 else
    ui_print "Rom doesn't have addon.d support"
 fi
