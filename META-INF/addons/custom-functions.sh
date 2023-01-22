@@ -20,8 +20,8 @@ bootanimation_backup() {
         if undefined native_anim ; then
            bootanimation_find /
         fi
-        mv $native_anim /"$path"/BootAnimationBackup/bootanimation.zip
-        ui_print "Backed up boot animation to /$path/BootAnimationBackup/bootanimation.zip"
+        mv $native_anim "$path"/BootAnimationBackup/bootanimation.zip
+        ui_print "Backed up boot animation to $path/BootAnimationBackup/bootanimation.zip"
     done
 }
 
