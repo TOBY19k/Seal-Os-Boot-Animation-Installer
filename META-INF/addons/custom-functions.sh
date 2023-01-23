@@ -19,7 +19,7 @@ bootanimation_find() {
 bootanimation_backup() {
     for path in "$@"; do
         if undefined native_anim ; then
-           bootanimation_find /
+           bootanimation_find
         fi
         mv $native_anim "$path"/BootAnimationBackup/bootanimation.zip
         ui_print "Backed Up Boot Animation To $path/BootAnimationBackup/bootanimation.zip"
@@ -29,7 +29,7 @@ bootanimation_backup() {
 bootanimation_restore() {
     for path in "$@"; do
         if undefined native_anim ; then
-           bootanimation_find /
+           bootanimation_find
         fi
         mv "$path"/BootAnimationBackup/bootanimation.zip $native_anim
         ui_print "Restored Boot Animation From $path/BootAnimationBackup/bootanimation.zip"
