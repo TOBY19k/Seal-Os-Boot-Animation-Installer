@@ -5,7 +5,7 @@ bootanimation_find() {
     if [ -f /system/media/bootsamsung.qmg ]; then
        abort "You Are Using Samsung Or Samsung Based ROM"
     fi
-    native_anim=$(find /system -type f -name bootanimation.zip) &&  exist "$native_anim" && ui_print "Found bootanimation.zip in /system"
+    native_anim=$(find /system -type f -name bootanimation.zip) &&  exist file "$native_anim" && ui_print "Found bootanimation.zip in /system"
     if undefined native_anim ; then
        if [ -f /oem/media/bootanimation.zip ]; then
           native_anim="/oem/media/bootanimation.zip"
