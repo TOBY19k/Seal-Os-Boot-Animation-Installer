@@ -18,15 +18,13 @@ bootanimation_find() {
 
 bootanimation_backup() {
     for path in "$@"; do
-        mv -f $native_anim "$path"/BootAnimationBackup/bootanimation.zip
-        ui_print "Backed Up Boot Animation To $path/BootAnimationBackup/bootanimation.zip"
+        move "$native_anim" $path/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To $path/BootAnimationBackup/bootanimation.zip"
     done
 }
 
 bootanimation_restore() {
     for path in "$@"; do
-        mv -f "$path"/BootAnimationBackup/bootanimation.zip $native_anim
-        ui_print "Restored Boot Animation From $path/BootAnimationBackup/bootanimation.zip"
+        move $path/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From $path/BootAnimationBackup/bootanimation.zip"
     done
 }
 
