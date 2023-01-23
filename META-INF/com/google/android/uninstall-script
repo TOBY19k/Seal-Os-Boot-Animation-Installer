@@ -4,7 +4,7 @@ ui_print "-- Mounting partitions --"
 mount_all
 ui_print "Finding bootanimation.zip"
 #use custom bootanimation function to find the boot animation 
-bootanimation_find /system
+bootanimation_find
 ui_print "Restoring Previous Boot Animation"
 bootanimation_restore /sdcard
 ui_print "Deleting boot animation back up folder"
