@@ -7,11 +7,11 @@ ui_print "Finding bootanimation.zip"
 bootanimation_find
 ui_print "Restoring Previous Boot Animation"
 bootanimation_restore /sdcard
-ui_print "Deleting boot animation back up folder"
+ui_print "Deleting Boot Animation Back Up Folder"
 rm -rf /sdcard/BootAnimationBackup
 #addon.d script
 if [ -d /system/addon.d ]; then
-   ui_print "Deleting addon.d survival script"
+   ui_print "Deleting Addon.d Survival Script"
    rm -f /system/addon.d/1[19]-*BootAnimation.sh
 fi
 ui_print "-- Unmounting ALL --"
