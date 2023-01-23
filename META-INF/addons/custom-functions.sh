@@ -7,7 +7,7 @@ bootanimation_find() {
     fi
     native_anim=$(find /system -type f -name bootanimation.zip) &&  exist "$native_anim" && ui_print "Found bootanimation.zip in /system"
     if undefined native_anim ; then
-       if exist /oem/media/bootanimation.zip ; them
+       if exist /oem/media/bootanimation.zip ; then
           native_anim="/oem/media/bootanimation.zip"
           ui_print "Found bootanimation.zip in /oem"
        else
