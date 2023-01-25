@@ -32,17 +32,17 @@ if check_content "sealos.txt" "$native_anim"; then
       bootanimation_backup /sdcard
       ui_print "-- Installing Seal Os Boot Animation --"
       package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
+      ui_print "Installed Seal Os Boot Animation To ${native_anim}"
    fi
 else
    ui_print "-- Backing Up Current Boot Animation --"
    bootanimation_backup /sdcard
    ui_print "-- Installing Seal Os Boot Animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
+   ui_print "Installed Seal Os Boot Animation To ${native_anim}"
 fi
 #addon.d script
 if [ -d /system/addon.d ]; then
-   ui_print "-- Rom Has Addon.d Support --"
-   ui_print "Checking If Seal Os Boot Animation Addon.d Script Is Installed"
    #Check if there already is a back up script
    if [ -f /system/addon.d/19-SealOsBootAnimation.sh ]; then
       ui_print "-- Updateing Survival Script --"
@@ -53,15 +53,12 @@ if [ -d /system/addon.d ]; then
       replace "SealOsBootAnimation.zip" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
       set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
    else
-      ui_print "Addon.d Survival Script Isn't Installed"
       ui_print "-- Installing Survival Script --"
       package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
       replace "bootanimation.zip" "${native_anim#/system/}" /system/addon.d/19-SealOsBootAnimation.sh
       replace "SealOsBootAnimation.zip" "$native_anim" /system/addon.d/19-SealOsBootAnimation.sh
       set_perm 0 0 0755 /system/addon.d/19-SealOsBootAnimation.sh
    fi
-else
-   end "Done Rom Doesn't Have Addon.d Support"
 fi
 ui_print "-- Unmounting ALL --"
 umount_all
