@@ -22,10 +22,10 @@ ui_print "Finding bootanimation.zip"
 bootanimation_find
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
-   content=$(package_extract_file "sealos.txt" "$native_anim")
-   sed -i "2"'d' $content
-   if [[ $content == Seal Os Boot Animation V1.6 ]] ; then
-      ui_print "Seal Os Boot Animation Is Already Installed"
+   version=$(package_extract_file "sealos.txt" "$native_anim")
+   sed -i "2"'d' $version
+   if [[ $version == Seal Os Boot Animation V1.6 ]] ; then
+      ui_print "-- Seal Os Boot Animation Is Already Installed --"
    else
       ui_print "-- Updateing Seal Os Boot Animation --"
       ui_print "Backing Up Current Boot Animation"
