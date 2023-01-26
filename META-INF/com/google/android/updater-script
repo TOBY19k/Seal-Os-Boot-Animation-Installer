@@ -49,7 +49,7 @@ if [ -d /system/addon.d ]; then
    else
       ui_print "-- Installing addon.d Survival Script --"
    fi
-   package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" $addon.d/19-SealOsBootAnimation.sh
+   package_extract_file "${addon.d#/}/19-SealOsBootAnimation.sh" $addon.d/19-SealOsBootAnimation.sh
    replace "bootanimation.zip" "${native_anim#/system/}" $addon.d/19-SealOsBootAnimation.sh
    replace "SealOsBootAnimation.zip" "$native_anim" $addon.d/19-SealOsBootAnimation.sh
    set_perm 0 0 0755 $addon.d/19-SealOsBootAnimation.sh
