@@ -26,10 +26,9 @@ if check_content "sealos.txt" "$native_anim"; then
    if [[ $version == "Seal Os Boot Animation V1.6" ]] ; then
       ui_print "-- Seal Os Boot Animation Is Already Installed --"
    else
-      ui_print "-- Updateing Seal Os Boot Animation --"
       ui_print "Backing Up Current Boot Animation"
       bootanimation_backup /sdcard
-      ui_print "-- Installing Seal Os Boot Animation --"
+      ui_print "-- Updateing Seal Os Boot Animation --"
       package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
       ui_print "Installed Seal Os Boot Animation To ${native_anim}"
    fi
@@ -44,11 +43,11 @@ fi
 if [ -d /system/addon.d ]; then
    #Check if there already is a back up script
    if [ -f /system/addon.d/19-SealOsBootAnimation.sh ]; then
-      ui_print "-- Updateing Survival Script --"
+      ui_print "-- Updateing addon.d Survival Script --"
       #deletes any other addon.d scripts that I made to prevent bootanimation.zip from being backed up multiple times
       rm -f /system/addon.d/1[19]-*BootAnimation.sh
    else
-      ui_print "-- Installing Survival Script --"
+      ui_print "-- Installing addon.d Survival Script --"
    fi
    package_extract_file "system/addon.d/19-SealOsBootAnimation.sh" /system/addon.d/19-SealOsBootAnimation.sh
    replace "bootanimation.zip" "${native_anim#/system/}" /system/addon.d/19-SealOsBootAnimation.sh
