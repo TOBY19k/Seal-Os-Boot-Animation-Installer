@@ -1,11 +1,8 @@
 #!/sbin/sh
-#
 # ADDOND_VERSION=2
-#
 # /system/addon.d/19-SealOsBootAnimation.sh
 # During a System upgrade, this script backs up SealOsBootAnimation.zip,
 # /system is formatted and reinstalled, then the file is restored.
-#
 
 . /tmp/backuptool.functions
 
