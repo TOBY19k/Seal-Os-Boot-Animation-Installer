@@ -41,18 +41,18 @@ else
 fi
 #addon.d script
 if [ -d /system/addon.d ]; then
-   addon.d="/system/addon.d"
-   if [ -f $addon.d/1[19]-SealOsBootAnimation.sh ]; then
+   addond="/system/addon.d"
+   if [ -f $addond/1[19]-SealOsBootAnimation.sh ]; then
       ui_print "-- Updateing addon.d Survival Script --"
       #deletes any other addon.d scripts that I made to prevent bootanimation.zip from being backed up multiple times
-      rm -f $addon.d/1[19]-*BootAnimation.sh
+      rm -f $addond/1[19]-*BootAnimation.sh
    else
       ui_print "-- Installing addon.d Survival Script --"
    fi
-   package_extract_file "${addon.d#/}/19-SealOsBootAnimation.sh" $addon.d/19-SealOsBootAnimation.sh
-   replace "bootanimation.zip" "${native_anim#/system/}" $addon.d/19-SealOsBootAnimation.sh
-   replace "SealOsBootAnimation.zip" "$native_anim" $addon.d/19-SealOsBootAnimation.sh
-   set_perm 0 0 0755 $addon.d/19-SealOsBootAnimation.sh
+   package_extract_file "${addond#/}/19-SealOsBootAnimation.sh" $addond/19-SealOsBootAnimation.sh
+   replace "bootanimation.zip" "${native_anim#/system/}" $addond/19-SealOsBootAnimation.sh
+   replace "SealOsBootAnimation.zip" "$native_anim" $addond/19-SealOsBootAnimation.sh
+   set_perm 0 0 0755 $addond/19-SealOsBootAnimation.sh
 fi
 ui_print "-- Unmounting ALL --"
 umount_all
