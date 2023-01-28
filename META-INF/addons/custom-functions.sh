@@ -25,7 +25,7 @@ bootanimation_backup() {
 }
 
 bootanimation_restore() {
-    ui_print "Restoring Previous Boot Animation"
+    ui_print "-- Restoring Previous Boot Animation --"
     for path in "$@"; do
         move $path/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From $path/BootAnimationBackup/bootanimation.zip"
     done
