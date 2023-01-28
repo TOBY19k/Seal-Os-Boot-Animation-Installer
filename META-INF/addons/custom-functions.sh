@@ -1,6 +1,7 @@
 #!/sbin/sh
 #Uses code from BlassGo
 bootanimation_find() {
+    ui_print "Finding bootanimation.zip"
     #Check if Samsung or Samsung based rom
     if [ -f /system/media/bootsamsung.qmg ]; then
        abort "You Are Using Samsung Or Samsung Based ROM"
