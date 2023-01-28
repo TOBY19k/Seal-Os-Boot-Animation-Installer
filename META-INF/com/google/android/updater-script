@@ -17,7 +17,6 @@ fi
 ui_print "Seal Os Boot Animation Installer"
 ui_print "-- Mounting partitions --"
 mount_all
-ui_print "Finding bootanimation.zip"
 #use custom bootanimation function to find the boot animation 
 bootanimation_find
 #check if seal os boot animation is installed 
