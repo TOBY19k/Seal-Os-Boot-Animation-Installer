@@ -8,7 +8,7 @@ bootanimation_find() {
     ui_print "Finding bootanimation.zip"
     native_anim=$(find /system -type f -name bootanimation.zip | head -n 1)
     unnecessary_anim=$(find /system -type f -name bootanimation.zip | tail -n 1)
-    if [ -f $unnecessary_anim ];
+    if [ -f $unnecessary_anim ]; then
        rm -f $unnecessary_anim
     fi
     if defined native_anim; then
