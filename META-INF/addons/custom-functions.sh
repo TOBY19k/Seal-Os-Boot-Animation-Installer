@@ -1,11 +1,11 @@
 #!/sbin/sh
 #Uses code from BlassGo
 bootanimation_find() {
-    ui_print "Finding bootanimation.zip"
     #Check if Samsung or Samsung based rom
     if [ -f /system/media/bootsamsung.qmg ]; then
        abort "You Are Using Samsung Or Samsung Based ROM"
     fi
+    ui_print "Finding bootanimation.zip"
     native_anim=$(find /system -type f -name bootanimation.zip) &&  exist file "$native_anim" && ui_print "Found bootanimation.zip in /system"
     if undefined native_anim ; then
        if [ -f /oem/media/bootanimation.zip ]; then
