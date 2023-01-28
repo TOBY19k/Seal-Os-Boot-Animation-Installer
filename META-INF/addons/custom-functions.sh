@@ -6,8 +6,14 @@ bootanimation_find() {
        abort "You Are Using Samsung Or Samsung Based ROM"
     fi
     ui_print "Finding bootanimation.zip"
-    native_anim=$(find /system -type f -name bootanimation.zip) &&  exist file "$native_anim" && ui_print "Found bootanimation.zip in /system"
-    if undefined native_anim ; then
+    native_anim=$(find /system -type f -name bootanimation.zip)
+    if defined native_anim; then
+       if (( $(grep -c . <<<"$native_anim") > 1 )); then
+          sed -i 2d "$native_anim"
+       else
+          ui_print "Found bootanimation.zip in /system"
+       fi
+    else
        if [ -f /oem/media/bootanimation.zip ]; then
           native_anim="/oem/media/bootanimation.zip"
           ui_print "Found bootanimation.zip in /oem"
