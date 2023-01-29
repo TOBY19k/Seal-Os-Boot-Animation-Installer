@@ -22,12 +22,11 @@ bootanimation_find
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
    package_extract_file "sealos.txt" $TMP/sealos.txt "$native_anim"
-   version=$(sed -n '1p' $TMP/sealos.txt | grep -w "1.*" | sed 's/\.//g')
+   version=$(sed -n '1p' $TMP/sealos.txt | grep -w "1.[0-9]" | sed 's/\.//g')
    if [[ $version -ge 16 ]] ; then
       ui_print "-- Seal Os Boot Animation Is Already Installed --"
    else
-      bootanimation_backup /sdcard
-      ui_print "-- Updateing Seal Os Boot Animation --"
+      ui_print "-- Updateing Seal Os Boot Animation ${version} --"
       package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
       ui_print "Installed Seal Os Boot Animation To ${native_anim}"
    fi
