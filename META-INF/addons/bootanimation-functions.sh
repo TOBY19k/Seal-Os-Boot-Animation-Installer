@@ -30,7 +30,3 @@ bootanimation_restore() {
         move $path/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From $path/BootAnimationBackup/bootanimation.zip"
     done
 }
-
-run_uninstall_script() {
-    package_extract_file "META-INF/com/google/android/uninstall-script" $TMP/uninstall-script && . $TMP/uninstall-script
-}
