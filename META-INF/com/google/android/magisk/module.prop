@@ -1,7 +1,7 @@
-id=test-module
-name=Test Module
+id=Seal-Os-Boot-Animation-Installer
+name=Seal-Os-Boot-Animation-Installer
 version=v1.0
 versionCode=1
-author=random
-description=Dynamic Installer magisk space
+author=TOBY19k
+description=Flash able zip that installs Seal Os Boot Animation
 support=none
