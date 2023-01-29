@@ -26,7 +26,7 @@ if check_content "sealos.txt" "$native_anim"; then
    if [ $version -ge 16 ] ; then
       ui_print "-- Seal Os Boot Animation Is Already Installed --"
    else
-      ui_print "-- Updateing from Seal Os Boot Animation V${version} --"
+      ui_print "-- Updateing from Seal Os Boot Animation V${version%[0-9]}.${version#[0-9]} --"
       package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
       ui_print "Installed Seal Os Boot Animation To ${native_anim}"
    fi
