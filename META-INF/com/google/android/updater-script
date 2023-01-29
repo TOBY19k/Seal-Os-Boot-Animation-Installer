@@ -39,7 +39,7 @@ fi
 #addon.d script
 if [ -d /system/addon.d ]; then
    addond=/system/addon.d
-   if [ -f $addond/1[19]-SealOsBootAnimation.sh ]; then
+   if [ -f ${addond}/1[19]-SealOsBootAnimation.sh ]; then
       ui_print "-- Updateing addon.d Survival Script --"
       #deletes any other addon.d scripts that I made to prevent bootanimation.zip from being backed up multiple times
       rm -f $addond/1[19]-*BootAnimation.sh
