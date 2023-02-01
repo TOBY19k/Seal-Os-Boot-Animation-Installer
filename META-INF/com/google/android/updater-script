@@ -11,13 +11,13 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
-if [[ ${installzip,,} == *uninstall.zip ]] ; then
+if [[ $(basename "${installzip,,}") == uninstall.zip ]] ; then
    run_uninstall_script
 fi
 ui_print "Seal Os Boot Animation Installer"
 ui_print "-- Mounting partitions --"
 mount_all
-#use custom bootanimation function to find the boot animation 
+$(basename "$installzip")#use custom bootanimation function to find the boot animation 
 bootanimation_find
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
