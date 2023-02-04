@@ -26,14 +26,14 @@ bootanimation_backup() {
     multi_option "my_menu" 3 loop       
     [ -z $my_menu ] && abort "No valid selection was obtained"
     if [[ $my_menu == 1 ]]; then
-       local ss=/sdcard
+       local user_selection=/sdcard
     elif [[ $my_menu == 2 ]]; then
-       local ss=/external_sd
+       local user_selection=/external_sd
     elif [[ $my_menu == 3 ]]; then
-       local ss=/usb-otg
+       local user_selection=/usb-otg
     fi
     ui_print "-- Backing Up Current Boot Animation --"
-    move "$native_anim" $ss/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $ss/BootAnimationBackup/bootanimation.zip"
+    move "$native_anim" $user_selection/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
 }
 
 bootanimation_restore() {
@@ -44,12 +44,12 @@ bootanimation_restore() {
     multi_option "my_menu" 3 loop       
     [ -z $my_menu ] && abort "No valid selection was obtained"
     if [[ $my_menu == 1 ]]; then
-       local ss=/sdcard
+       local user_selection=/sdcard
     elif [[ $my_menu == 2 ]]; then
-       local ss=/external_sd
+       local user_selection=/external_sd
     elif [[ $my_menu == 3 ]]; then
-       local ss=/usb-otg
+       local user_selection=/usb-otg
     fi
     ui_print "-- Restoring Previous Boot Animation --"
-    move $ss/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From ${n} $ss/BootAnimationBackup/bootanimation.zip"
+    move $user_selection/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
 }
