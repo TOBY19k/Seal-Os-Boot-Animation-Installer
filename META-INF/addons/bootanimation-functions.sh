@@ -19,7 +19,7 @@ bootanimation_find() {
 }
 
 bootanimation_backup() {
-    ui_print " 1. Backup Boot Animation to sdcard aka internal storage"
+    ui_print " 1. Backup Boot Animation to sdcard aka ${n} Internal storage"
     ui_print " 2. Backup Boot Animation to external_sd"
     ui_print " 3. Backup Boot Animation to usb-otg"
     ui_print "Volume up = yes | Volume down =  next option"
@@ -33,11 +33,11 @@ bootanimation_backup() {
        storage=/usb-otg
     fi
     ui_print "-- Backing Up Current Boot Animation --"
-    move "$native_anim" $storage/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To $storage/BootAnimationBackup/bootanimation.zip"
+    move "$native_anim" $storage/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $storage/BootAnimationBackup/bootanimation.zip"
 }
 
 bootanimation_restore() {
-    ui_print " 1. Restore Boot Animation from sdcard aka internal storage"
+    ui_print " 1. Restore Boot Animation from sdcard aka ${n} Internal storage"
     ui_print " 2. Restore Boot Animation from external_sd"
     ui_print " 3. Restore Boot Animation from usb-otg"
     ui_print "Volume up = yes | Volume down =  next option"
@@ -51,5 +51,5 @@ bootanimation_restore() {
        storage=/usb-otg
     fi
     ui_print "-- Restoring Previous Boot Animation --"
-    move $storage/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From $storage/BootAnimationBackup/bootanimation.zip"
+    move $storage/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From ${n} $storage/BootAnimationBackup/bootanimation.zip"
 }
