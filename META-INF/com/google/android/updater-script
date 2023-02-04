@@ -31,7 +31,7 @@ if check_content "sealos.txt" "$native_anim"; then
       ui_print "Installed Seal Os Boot Animation To ${native_anim}"
    fi
 else
-   bootanimation_backup /sdcard
+   bootanimation_backup
    ui_print "-- Installing Seal Os Boot Animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
    ui_print "Installed Seal Os Boot Animation To ${native_anim}"
