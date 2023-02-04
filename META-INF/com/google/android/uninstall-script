@@ -2,9 +2,8 @@
 ui_print "Boot Animation Uninstaller"
 ui_print "-- Mounting partitions --"
 mount_all
-#use custom bootanimation function to find the boot animation 
 bootanimation_find
-bootanimation_restore /sdcard
+bootanimation_restore
 ui_print "Deleting Boot Animation Back Up Folder"
 rm -rf /sdcard/BootAnimationBackup
 #addon.d script
