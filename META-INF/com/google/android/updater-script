@@ -17,8 +17,7 @@ fi
 ui_print "Seal Os Boot Animation Installer"
 ui_print "-- Mounting partitions --"
 mount_all
-#use custom bootanimation function to find the boot animation 
-bootanimation_find
+ba find
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
    package_extract_file "sealos.txt" $TMP/sealos.txt "$native_anim"
@@ -31,7 +30,7 @@ if check_content "sealos.txt" "$native_anim"; then
       ui_print "Installed Seal Os Boot Animation To ${n} ${native_anim}"
    fi
 else
-   bootanimation_backup
+   ba backup
    ui_print "-- Installing Seal Os Boot Animation --"
    package_extract_file "system/media/SealOsBootAnimation.zip" $native_anim
    ui_print "Installed Seal Os Boot Animation To ${n} ${native_anim}"
