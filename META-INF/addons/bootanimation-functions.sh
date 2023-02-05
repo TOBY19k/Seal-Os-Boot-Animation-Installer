@@ -33,7 +33,7 @@ bootanimation_backup() {
        local user_selection=/usb-otg
     fi
     ui_print "-- Backing Up Current Boot Animation --"
-    move "$native_anim" $user_selection/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
+    move "$native_anim" "$user_selection"/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
 }
 
 bootanimation_restore() {
@@ -51,5 +51,5 @@ bootanimation_restore() {
        local user_selection=/usb-otg
     fi
     ui_print "-- Restoring Previous Boot Animation --"
-    move $user_selection/BootAnimationBackup/bootanimation.zip $native_anim && ui_print "Restored Boot Animation From ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
+    move "$user_selection"/BootAnimationBackup/bootanimation.zip "$native_anim" && ui_print "Restored Boot Animation From ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
 }
