@@ -24,6 +24,7 @@ jobs:
           rm system/addon.d/addon.d.md
           rm system/media/BOOTANIMATION/BOOTANIMATION.md
       - name: Upload Seal Os Boot Animation Installer
+        uses: actions/upload-artifact@v3
         with:
           name: SealOsBootAnimationInstallerTest
           path: |
