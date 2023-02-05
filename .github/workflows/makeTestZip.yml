@@ -19,16 +19,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # Runs a set of commands using the runners shell
-      - name: Zip Boot Animation 
-        run: |
-          zip -0qry -i \*.txt \*.png @ ${{ github.workspace }}/system/media/SealOsBootAnimation.zip *.txt part*
-        working-directory: ${{ github.workspace }}/system/media/BOOTANIMATION
-      - name: Delete file & folder that we don't want in the flash file
+      - name: Delete files that we don't want in the flash file
         run: |
           rm system/addon.d/addon.d.md
-          rm -r system/media/BOOTANIMATION
+          rm system/media/BOOTANIMATION/BOOTANIMATION.md
       - name: Upload Seal Os Boot Animation Installer
-        uses: actions/upload-artifact@v3
+        usv3
         with:
           name: SealOsBootAnimationInstallerTest
           path: |
