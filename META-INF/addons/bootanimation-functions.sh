@@ -23,13 +23,13 @@ bootanimation_backup() {
     ui_print " 2. Backup Boot Animation to external_sd"
     ui_print " 3. Backup Boot Animation to usb-otg"
     ui_print "Volume up = yes | Volume down =  next option"
-    multi_option "my_menu" 3 loop       
-    [ -z $my_menu ] && abort "No valid selection was obtained"
-    if [[ $my_menu == 1 ]]; then
+    multi_option "backup_menu" 3 loop       
+    [ -z $backup_menu ] && abort "No valid selection was obtained"
+    if [[ $backup_menu == 1 ]]; then
        local user_selection=/sdcard
-    elif [[ $my_menu == 2 ]]; then
+    elif [[ $backup_menu == 2 ]]; then
        local user_selection=/external_sd
-    elif [[ $my_menu == 3 ]]; then
+    elif [[ $backup_menu == 3 ]]; then
        local user_selection=/usb-otg
     fi
     ui_print "-- Backing Up Current Boot Animation --"
@@ -41,13 +41,13 @@ bootanimation_restore() {
     ui_print " 2. Restore Boot Animation from external_sd"
     ui_print " 3. Restore Boot Animation from usb-otg"
     ui_print "Volume up = yes | Volume down =  next option"
-    multi_option "my_menu" 3 loop       
-    [ -z $my_menu ] && abort "No valid selection was obtained"
-    if [[ $my_menu == 1 ]]; then
+    multi_option "restore_menu" 3 loop       
+    [ -z $restore_menu ] && abort "No valid selection was obtained"
+    if [[ $restore_menu == 1 ]]; then
        local user_selection=/sdcard
-    elif [[ $my_menu == 2 ]]; then
+    elif [[ $restore_menu == 2 ]]; then
        local user_selection=/external_sd
-    elif [[ $my_menu == 3 ]]; then
+    elif [[ $restore_menu == 3 ]]; then
        local user_selection=/usb-otg
     fi
     ui_print "-- Restoring Previous Boot Animation --"
