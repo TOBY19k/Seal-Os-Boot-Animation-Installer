@@ -1,7 +1,14 @@
 #!/sbin/sh
 #Uses code from BlassGo
 ba() {
-    if [[ $1 == "find" ]]; then
+    local backup=false find=false restore=false
+    case $1 in
+        -f|-find) find=true;;
+        -r|-restore) restore=true;;
+        -b|-backup) backup=true;;
+        *) ;;
+    esac;
+    if $find; then
        [ -f /system/media/bootsamsung.qmg ] && abort "You Are Using Samsung Or Samsung Based ROM"
        ui_print "Finding bootanimation.zip"
        native_anim=$(find /system -type f -name bootanimation.zip | sed -n '1p')
@@ -17,7 +24,15 @@ ba() {
              abort "CANT FIND: bootanimation.zip"
           fi  
        fi
-    elif [[ $1 == "backup" ]]; then
+       if [ -n $2 ]; then
+          case $2 in
+              -r|-restore) restore=true;;
+              -b|-backup) backup=true;;
+              *) ;;
+          esac;
+       fi
+    fi
+    if $backup; then
        ui_print " 1. Backup Boot Animation to sdcard aka ${n} Internal storage"
        ui_print " 2. Backup Boot Animation to external_sd"
        ui_print " 3. Backup Boot Animation to usb-otg"
@@ -33,7 +48,8 @@ ba() {
        fi
        ui_print "-- Backing Up Current Boot Animation --"
        move "$native_anim" "$user_selection"/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
-    elif [[ $1 == "restore" ]]; then
+    fi
+    if $restore; then
        ui_print " 1. Restore Boot Animation from sdcard aka ${n} Internal storage"
        ui_print " 2. Restore Boot Animation from external_sd"
        ui_print " 3. Restore Boot Animation from usb-otg"
