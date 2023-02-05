@@ -11,7 +11,7 @@ setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
 #Your script starts here:
-if [[ $(basename "${installzip,,}") == uninstall.zip ]] ; then
+if [[ $(basename "${installzip,,}") == uninstall.zip ]]; then
    run_uninstall_script
 fi
 ui_print "Seal Os Boot Animation Installer"
@@ -23,7 +23,7 @@ bootanimation_find
 if check_content "sealos.txt" "$native_anim"; then
    package_extract_file "sealos.txt" $TMP/sealos.txt "$native_anim"
    version=$(sed -n '1p' $TMP/sealos.txt | grep -Eo '[0-9].[0-9]' | sed 's/\.//g')
-   if [ $version -ge 16 ] ; then
+   if [ $version -ge 16 ]; then
       ui_print "-- Seal Os Boot Animation Is Already Installed --"
    else
       ui_print "-- Updateing from Seal Os Boot Animation V${version%[0-9]}.${version#[0-9]} --"
