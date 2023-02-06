@@ -3,9 +3,9 @@
 ba() {
     local backup=false find=false restore=false
     case $1 in
+        -b|-backup) backup=true;;
         -f|-find) find=true;;
         -r|-restore) restore=true;;
-        -b|-backup) backup=true;;
         *) ;;
     esac;
     if $find; then
@@ -26,8 +26,8 @@ ba() {
        fi
        if [ -n $2 ]; then
           case $2 in
-              -r|-restore) restore=true;;
               -b|-backup) backup=true;;
+              -r|-restore) restore=true;;
               *) ;;
           esac;
        fi
