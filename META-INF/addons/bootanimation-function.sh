@@ -1,5 +1,6 @@
 #!/sbin/sh
-#Uses code from BlassGo
+# ba function by @TOBY19k
+#Also uses Dynamic Installer functions and code from @BlassGo
 ba() {
     local backup=false find=false restore=false
     case $1 in
