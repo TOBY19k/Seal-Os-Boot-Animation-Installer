@@ -7,7 +7,7 @@ ba() {
         -b|-backup) backup=true;;
         -f|-find) find=true;;
         -r|-restore) restore=true;;
-        *) ;;
+        *) ui_print "Go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/wiki/bootanimation-function.sh  for help useing this function";;
     esac;
     if $find; then
        [ -f /system/media/bootsamsung.qmg ] && abort "You Are Using Samsung Or Samsung Based ROM"
