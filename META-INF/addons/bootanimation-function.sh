@@ -66,7 +66,7 @@ ba() {
        fi
        ui_print "-- Restoring Previous Boot Animation --"
        move "$user_selection"/BootAnimationBackup/bootanimation.zip "$native_anim" && ui_print "Restored Boot Animation From ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
-       ui_print "Deleting Boot Animation Back Up Folder"
+       ui_print "Deleting BootAnimationBackup Folder"
        rm -rf "$user_selection"/BootAnimationBackup
     fi
 }
