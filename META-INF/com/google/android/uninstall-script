@@ -3,8 +3,6 @@ ui_print "Boot Animation Uninstaller"
 ui_print "-- Mounting partitions --"
 mount_all
 ba -find -restore
-ui_print "Deleting Boot Animation Back Up Folder"
-rm -rf /sdcard/BootAnimationBackup
 #addon.d script
 if [ -d /system/addon.d ]; then
    ui_print "Deleting Addon.d Survival Script"
