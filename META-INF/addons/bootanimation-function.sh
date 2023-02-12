@@ -2,7 +2,7 @@
 # ba function by @TOBY19k
 #Also uses Dynamic Installer functions and code from @BlassGo
 ba() {
-    local backup=false find=false restore=false
+    local backup=false find=false restore=false backup_sd
     case $1 in
         -b|-backup) backup=true;;
         -f|-find) find=true;;
@@ -41,14 +41,14 @@ ba() {
        multi_option "backup_menu" 3 loop       
        [ -z $backup_menu ] && abort "No valid selection was obtained"
        if [[ $backup_menu == 1 ]]; then
-          local user_selection=/sdcard
+          backup_sd=/sdcard
        elif [[ $backup_menu == 2 ]]; then
-          local user_selection=/external_sd
+          backup_sd=/external_sd
        elif [[ $backup_menu == 3 ]]; then
-          local user_selection=/usb-otg
+          backup_sd=/usb-otg
        fi
        ui_print "-- Backing Up Current Boot Animation --"
-       move "$native_anim" "$user_selection"/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
+       move "$native_anim" "$backup_sd"/BootAnimationBackup/bootanimation.zip && ui_print "Backed Up Boot Animation To ${n} $backup_sd/BootAnimationBackup/bootanimation.zip"
     fi
     if $restore; then
        ui_print " 1. Restore Boot Animation from sdcard aka ${n} Internal storage"
@@ -58,15 +58,15 @@ ba() {
        multi_option "restore_menu" 3 loop       
        [ -z $restore_menu ] && abort "No valid selection was obtained"
        if [[ $restore_menu == 1 ]]; then
-          local user_selection=/sdcard
+          backup_sd=/sdcard
        elif [[ $restore_menu == 2 ]]; then
-          local user_selection=/external_sd
+          backup_sd=/external_sd
        elif [[ $restore_menu == 3 ]]; then
-          local user_selection=/usb-otg
+          backup_sd=/usb-otg
        fi
        ui_print "-- Restoring Previous Boot Animation --"
-       move "$user_selection"/BootAnimationBackup/bootanimation.zip "$native_anim" && ui_print "Restored Boot Animation From ${n} $user_selection/BootAnimationBackup/bootanimation.zip"
+       move "$backup_sd"/BootAnimationBackup/bootanimation.zip "$native_anim" && ui_print "Restored Boot Animation From ${n} $backup_sd/BootAnimationBackup/bootanimation.zip"
        ui_print "Deleting BootAnimationBackup Folder"
-       rm -rf "$user_selection"/BootAnimationBackup
+       rm -rf "$backup_sd"/BootAnimationBackup
     fi
 }
