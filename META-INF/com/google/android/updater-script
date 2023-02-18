@@ -20,12 +20,12 @@ mount_all
 ba -find
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
-   installedVersion=$(package_extract_file "sealos.txt" "$native_anim" | sed -n '1p' | grep -Eo '[0-9].[0-9]' | sed 's/\.//g')
-   availableVersion=$(sed -n '1p' $addons/sealos.txt | grep -Eo '[0-9].[0-9]' | sed 's/\.//g')
-   if [ $installedVersion -ge $availableVersion ]; then
+   INSTALLED_VER=$(package_extract_file sealos.txt "" "$native_anim" | sed -n '1p' | grep -Eo '[0-9].[0-9]' | sed 's/\.//g')
+   AVAILABLE_VER=$(sed -n '1p' $addons/sealos.txt | grep -Eo '[0-9].[0-9]' | sed 's/\.//g')
+   if [ $INSTALLED_VER -ge $AVAILABLE_VER ]; then
       ui_print "-- Seal Os Boot Animation Is Already Installed --"
    else
-      ui_print "-- Updateing from Seal Os Boot Animation V${version%[0-9]}.${version#[0-9]} --"
+      ui_print "-- Updateing to Seal Os Boot Animation V${AVAILABLE_VER%[0-9]}.${AVAILABLE_VER#[0-9]} --"
       package_extract_dir "system/media/BOOTANIMATION" $TMP/BOOTANIMATION
       copy "$addons/sealos.txt" "$TMP/BOOTANIMATION"
       cd "$TMP/BOOTANIMATION"
