@@ -1,2 +1,2 @@
-Seal Os Boot Animation V1.6
-Seal Os Boot Animation Installer V1.1.0
+BOOT_ANIM_VER=16
+INSTALLER_VER=120
