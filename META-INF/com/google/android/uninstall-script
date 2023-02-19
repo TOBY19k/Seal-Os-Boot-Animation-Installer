@@ -5,7 +5,7 @@ mount_all
 ba -find -restore
 #addon.d script
 if [ -d /system/addon.d ]; then
-   ui_print "Deleting Addon.d Survival Script"
+   ui_print "Deleting addon.d survival script"
    rm -f /system/addon.d/1[19]-*BootAnimation.sh
 fi
 ui_print "-- Unmounting ALL --"
