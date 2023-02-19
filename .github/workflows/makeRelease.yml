@@ -37,8 +37,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 'V1.1.0'
-          release_name: 'V1.1.0'
+          tag_name: 'V1.2.0'
+          release_name: 'V1.2.0'
           body_path: '.github/ReleaseNotes.md'
           prerelease: false
           draft: false
