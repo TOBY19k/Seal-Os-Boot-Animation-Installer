@@ -4,6 +4,7 @@
 #The #MAGISK tag is required, dont remove it
 #MAGISK
 setdefault magisk_support on
+setdefault ensure_root on
 setdefault import_addons on
 setdefault apex_mount off
 setdefault extraction_speed default
