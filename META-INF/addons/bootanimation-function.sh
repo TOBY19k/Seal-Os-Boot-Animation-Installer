@@ -14,7 +14,10 @@ ba() {
        ui_print "Finding bootanimation.zip"
        native_anim=$(find /system -type f -name bootanimation.zip | sed -n '1p')
        #Deletes any unnecessary boot animations if there are
-       find /system -type f -name bootanimation.zip | sed -n '{2..10}p' | xargs rm -f
+       local COUNT=$(find /system -type f -name bootanimation.zip | grep -c "bootanimation.zip")
+       if [ $COUNT -ge 2 ]; then
+          find /system -type f -name bootanimation.zip | sed '1d' |  xargs -d'\n' rm -f
+       fi
        if [ -n $native_anim ]; then
           ui_print "Found bootanimation.zip in /system"
        else
