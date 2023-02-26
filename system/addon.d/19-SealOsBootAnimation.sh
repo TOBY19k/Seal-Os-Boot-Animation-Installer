@@ -20,7 +20,6 @@ echo -e "ui_print $1\nui_print" >> /proc/self/fd/$OUTFD
 
 list_files() {
 cat <<EOF
-bootanimation.zip
 EOF
 }
 
