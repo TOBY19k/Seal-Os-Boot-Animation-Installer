@@ -13,7 +13,7 @@ ba() {
        [ -f /system/media/bootsamsung.qmg ] && abort "You are using Samsung or Samsung based ROM"
        ui_print "Finding bootanimation.zip"
        native_anim=$(find /system -type f -name bootanimation.zip | sed -n '1p')
-       #Deletes any unnecessary boot animations if there are
+       #Check's how many times the boot animation is found then deletes all but the first boot animation found
        if [ $(find /system -type f -name bootanimation.zip | grep -c "bootanimation.zip") -ge 2 ]; then
           find /system -type f -name bootanimation.zip | sed '1d' |  xargs -d'\n' rm -f
        fi
