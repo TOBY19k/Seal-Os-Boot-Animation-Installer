@@ -12,7 +12,7 @@ ba() {
     if $find; then
        [ -f /system/media/bootsamsung.qmg ] && abort "You are using Samsung or Samsung based ROM"
        ui_print "Finding bootanimation.zip"
-       find /system -type f -name bootanimation.zip > $TMPfind_result.txt
+       find /system -type f -name bootanimation.zip > "$TMP"find_result.txt
        native_anim=$(sed -n '1p' "$TMP"find_result.txt)
        #Check's how many times the boot animation is found, then finds all boot animations in /system, 
        #then pipes the results to sed which removes the first result, then uses xargs to deletes the rest of the results 
