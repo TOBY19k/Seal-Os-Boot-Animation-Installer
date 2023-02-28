@@ -6,6 +6,8 @@ ba() {
     case $1 in
         -b|-backup) backup=true;;
         -f|-find) find=true;;
+        -fb) find=true backup=true;;
+        -fr) find=true restore=true;;
         -r|-restore) restore=true;;
         *) ui_print "Go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/wiki/bootanimation-function.sh  for help useing this function" && return 1;;
     esac;
@@ -28,13 +30,6 @@ ba() {
           else
              abort "CANT FIND: bootanimation.zip"
           fi  
-       fi
-       if [ -n $2 ]; then
-          case $2 in
-              -b|-backup) backup=true;;
-              -r|-restore) restore=true;;
-              *) ;;
-          esac;
        fi
     fi
     if $backup; then
