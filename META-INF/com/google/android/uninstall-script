@@ -2,7 +2,7 @@
 ui_print "Boot Animation Uninstaller"
 ui_print "-- Mounting partitions --"
 mount_all
-ba -find -restore
+ba -fr
 #addon.d script
 if [ -d /system/addon.d ]; then
    ui_print "Deleting addon.d survival script"
