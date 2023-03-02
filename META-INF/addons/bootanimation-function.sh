@@ -3,12 +3,25 @@
 #Also uses Dynamic Installer functions and code from @BlassGo
 ba() {
     local backup=false find=false restore=false backup_sd
-    case $(($1|$2)) in
-        -b|-backup) backup=true;;
-        -f|-find) find=true;;
-        -r|-restore) restore=true;;
-        *) ui_print "Go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/wiki/bootanimation-function.sh  for help useing this function" && return 1;;
-    esac;
+    while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -b|-backup)
+        backup=true
+        shift;
+        ;;
+        -f|-find)
+        find=true
+        shift;
+        ;;
+        -r|-restore)
+        restore=true
+        shift;
+        ;;
+        *) 
+        ui_print "Go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/wiki/bootanimation-function.sh  for help useing this function" && return 1
+        ;;
+    esac 
+    done
     if $find; then
        [ -f /system/media/bootsamsung.qmg ] && abort "You are using Samsung or Samsung based ROM"
        ui_print "Finding bootanimation.zip"
@@ -46,8 +59,7 @@ ba() {
        fi
        ui_print "-- Backing up current boot animation --"
        move "$native_anim" "$backup_sd"/BootAnimationBackup/bootanimation.zip && ui_print "Backed up boot animation to ${n} ${backup_sd}/BootAnimationBackup/bootanimation.zip"
-    fi
-    if $restore; then
+    elif $restore; then
        ui_print " 1. Restore boot snimation from sdcard aka ${n} internal storage"
        ui_print " 2. Restore boot animation from external_sd"
        ui_print " 3. Restore boot animation from usb-otg"
