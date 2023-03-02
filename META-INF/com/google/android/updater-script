@@ -33,20 +33,12 @@ if check_content "sealos.txt" "$native_anim"; then
       ui_print "-- Seal Os Boot Animation is already installed --"
    else
       ui_print "-- Updateing to Seal Os Boot Animation V${AVAILABLE_ANIM_VER%[0-9]}.${AVAILABLE_ANIM_VER#[0-9]} --"
-      package_extract_dir "system/media/BOOTANIMATION" $TMP/BOOTANIMATION
-      cd "$TMP/BOOTANIMATION"
-      sed -i 's/AVAILABLE/INSTALLED/g' sealos.txt
-      zip -0qry -i \*.txt \*.png @ $native_anim *.txt part*
-      ui_print "Installed Seal Os Boot Animation to ${n} ${native_anim}"
+      install_boot_anim
    fi
 else
    ba -backup
    ui_print "-- Installing Seal Os Boot Animation --"
-   package_extract_dir "system/media/BOOTANIMATION" $TMP/BOOTANIMATION
-   cd "$TMP/BOOTANIMATION"
-   sed -i 's/AVAILABLE/INSTALLED/g' sealos.txt
-   zip -0qry -i \*.txt \*.png @ $native_anim *.txt part*
-   ui_print "Installed Seal Os Boot Animation to ${n} ${native_anim}"
+   install_boot_anim
 fi
 #addon.d script
 if [ -d /system/addon.d ]; then
