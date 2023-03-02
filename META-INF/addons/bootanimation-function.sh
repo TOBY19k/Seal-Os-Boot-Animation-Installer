@@ -3,7 +3,7 @@
 #Also uses Dynamic Installer functions and code from @BlassGo
 ba() {
     local backup=false find=false restore=false backup_sd
-    case ($1|$2) in
+    case $(($1||$2)) in
         -b|-backup) backup=true;;
         -f|-find) find=true;;
         -r|-restore) restore=true;;
