@@ -3,11 +3,9 @@
 #Also uses Dynamic Installer functions and code from @BlassGo
 ba() {
     local backup=false find=false restore=false backup_sd
-    case $1 in
+    case ($1|$2) in
         -b|-backup) backup=true;;
         -f|-find) find=true;;
-        -f--b) find=true backup=true;;
-        -f--r) find=true restore=true;;
         -r|-restore) restore=true;;
         *) ui_print "Go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/wiki/bootanimation-function.sh  for help useing this function" && return 1;;
     esac;
