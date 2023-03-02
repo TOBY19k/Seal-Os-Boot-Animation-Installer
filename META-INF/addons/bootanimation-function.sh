@@ -23,7 +23,7 @@ ba() {
           ui_print "Found bootanimation.zip in /system"
        else
           if [ -f /oem/media/bootanimation.zip ]; then
-             native_anim="/oem/media/bootanimation.zip"
+             native_anim=/oem/media/bootanimation.zip
              ui_print "Found bootanimation.zip in /oem"
           else
              abort "CANT FIND: bootanimation.zip"
