@@ -45,7 +45,7 @@ ba() {
           backup_sd=/usb-otg
        fi
        ui_print "-- Backing up current boot animation --"
-       move "$native_anim" "$backup_sd"/BootAnimationBackup/bootanimation.zip && ui_print "Backed up noot animation to ${n} $backup_sd/BootAnimationBackup/bootanimation.zip"
+       move "$native_anim" "$backup_sd"/BootAnimationBackup/bootanimation.zip && ui_print "Backed up noot animation to ${n} ${backup_sd}/BootAnimationBackup/bootanimation.zip"
     fi
     if $restore; then
        ui_print " 1. Restore boot snimation from sdcard aka ${n} internal storage"
@@ -62,7 +62,7 @@ ba() {
           backup_sd=/usb-otg
        fi
        ui_print "-- Restoring previous boot animation --"
-       move "$backup_sd"/BootAnimationBackup/bootanimation.zip "$native_anim" && ui_print "Restored Boot Animation From ${n} $backup_sd/BootAnimationBackup/bootanimation.zip"
+       move "$backup_sd"/BootAnimationBackup/bootanimation.zip "$native_anim" && ui_print "Restored Boot Animation From ${n} ${backup_sd}/BootAnimationBackup/bootanimation.zip"
        ui_print "Deleting BootAnimationBackup folder"
        rm -rf "$backup_sd"/BootAnimationBackup
     fi
