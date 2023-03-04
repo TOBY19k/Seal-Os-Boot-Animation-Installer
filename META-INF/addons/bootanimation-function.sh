@@ -5,11 +5,11 @@ ba() {
     local backup=false find=false restore=false backup_sd
     while [[ $# -gt 0 ]]; do
     case "$1" in
-        -b|-backup)
+        -f|-find)
         backup=true
         shift;
         ;;
-        -f|-find)
+        -b|-backup)
         find=true
         shift;
         ;;
