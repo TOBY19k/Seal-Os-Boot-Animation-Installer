@@ -27,8 +27,8 @@ ba() {
        ui_print "Finding bootanimation.zip"
        find /system -type f -name bootanimation.zip > "$TMP"find_result.txt
        native_anim=$(sed -n '1p' "$TMP"find_result.txt)
-       #Check's how many times the boot animation is found, then finds all boot animations in /system, 
-       #then pipes the results to sed which removes the first result, then uses xargs to deletes the rest of the results 
+       #Check's how many times the boot animation is found
+       #then use sed to remove the first result, then pipes to xargs which deletes the rest of the results 
        if [ $(grep -c "bootanimation.zip" "$TMP"find_result.txt) -gt 1 ]; then
           sed '1d' "$TMP"find_result.txt |  xargs -d'\n' rm -f
        fi
