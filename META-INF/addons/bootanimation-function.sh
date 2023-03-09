@@ -7,15 +7,15 @@ ba() {
     case "$1" in
         -f|-find)
         backup=true
-        shift;
+        shift
         ;;
         -b|-backup)
         find=true
-        shift;
+        shift
         ;;
         -r|-restore)
         restore=true
-        shift;
+        shift
         ;;
         *) 
         ui_print "Go to https://github.com/TOBY19k/Seal-Os-Boot-Animation-Installer/wiki/bootanimation-function.sh  for help useing this function" && return 1
