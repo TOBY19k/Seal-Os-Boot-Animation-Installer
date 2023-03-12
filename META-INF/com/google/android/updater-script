@@ -23,8 +23,8 @@ ba -find
 #check if seal os boot animation is installed 
 if check_content "sealos.txt" "$native_anim"; then
    import_config_zip "system/media/BOOTANIMATION/sealos.txt"
-   package_extract_file sealos.txt "$TMP/sealos.txt" "$native_anim"
-   if grep -q INSTALLED_ANIM_VER "$TMP/sealos.txt"; then
+   unzip -p "$native_anim" sealos.txt > "$TMP"/sealos.txt 
+   if grep -q INSTALLED_ANIM_VER "$TMP"/sealos.txt; then
       get_file_prop $TMP/sealos.txt "INSTALLED_ANIM_VER"
    else
       INSTALLED_ANIM_VER=$(sed -n '1p' "$TMP/sealos.txt" | grep -Eo '[0-9].[0-9]' | sed 's/\.//g')
